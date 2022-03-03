@@ -1,0 +1,1 @@
+Compile with `g++-11 ./main/main.cpp ./structures/internal/src/rbtreenodebase.cpp -I structures`
