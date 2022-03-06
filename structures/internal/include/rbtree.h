@@ -1,3 +1,5 @@
+#pragma once
+
 #include <memory>
 
 #include <internal/include/rbtreecolor.h>

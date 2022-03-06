@@ -1,24 +1,20 @@
 #include <iostream>
 #include <string>
 
+#include <geometry/point.h>
+#include <geometry/linesegment.h>
+
 #include <structures/rbtree.h>
 
 int main()
 {
-    RBTree<int, std::string> tree = {{1, "asd"}, {3, "qwe"}, {2, "zxc"}};
-    tree.insert({0, "g"});
-    tree[-1] = "x";
-    tree.insert(std::make_pair<int, std::string>(4, "y"));
+    RBTree<Point<int>, LineSegment<int>> tree = {   {Point<int>(1, 1), LineSegment(Point<int>(1, 1), Point<int>(2, 2))},
+                                                    {Point<int>(2, 2), LineSegment(Point<int>(2, 2), Point<int>(3, 3))},
+                                                    {Point<int>(3, 3), LineSegment(Point<int>(3, 3), Point<int>(4, 4))}     };
+    tree.insert({Point<int>(0, 0), LineSegment(Point<int>(0, 0), Point<int>(1, 1))});
 
-    for(auto node : tree)
-        std::cout << node.first << " " << node.second << "\n";
-
-    std::cout << "\n";
-    std::cout << tree[3]  << "\n";
-
-    tree[1] = "ert";
-    std::cout << tree[1] << "\n";
+    tree.erase(Point<int>(2, 2));
+    tree[Point<int>(2, 2)] = LineSegment(Point<int>(5, 5), Point<int>(3, 3));
 
     return 0;
 }
-

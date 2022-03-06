@@ -335,7 +335,7 @@ typename RBTree<K, M, C, V, A, S>::SizeType RBTree<K, M, C, V, A, S>::erase(cons
 template <typename K, typename M, typename C, typename V, typename A, typename S>
 typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::erase(RBTree<K, M, C, V, A, S>::ConstIterator first, RBTree<K, M, C, V, A, S>::ConstIterator last)
 {
-    auxialiiaryErase(first, last);
+    auxilliaryErase(first, last);
     return last.constCast();
 }
 
@@ -395,7 +395,7 @@ void RBTree<K, M, C, V, A, S>::clear()
     erase(linkBegin());
     leftmost() = linkEnd();
     root() = nullptr;
-    rightmost() = end();
+    rightmost() = linkEnd();
     mNodeCount = 0;
 }
 
@@ -452,16 +452,16 @@ C RBTree<K, M, C, V, A, S>::compareKeys() const
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-std::pair<typename RBTree<K, M, C, V, A, S>::Iterator, typename RBTree<K, M, C, V, A, S>::Iterator> RBTree<K, M, C, V, A, S>::equalRange(const K& key)
+std::pair<typename RBTree<K, M, C, V, A, S>::Iterator, typename RBTree<K, M, C, V, A, S>::Iterator> RBTree<K, M, C, V, A, S>::equalRange(const K& k)
 {
     LinkType x = linkBegin();
     LinkType y = linkEnd();
 
     while(x)
     {
-        if (mComparison(key(x), key))
+        if (mComparison(key(x), k))
             x = right(x);
-        else if (mComparison(key, key(x)))
+        else if (mComparison(k, key(x)))
         {
             y = x;
             x = left(x);
@@ -476,7 +476,7 @@ std::pair<typename RBTree<K, M, C, V, A, S>::Iterator, typename RBTree<K, M, C, 
 
             a = right(a);
 
-            return std::pair<Iterator, Iterator>(lowerBound(x, y, key), upperBound(a, b, key));
+            return std::pair<Iterator, Iterator>(lowerBound(x, y, k), upperBound(a, b, k));
         }
     }
 
@@ -484,16 +484,16 @@ std::pair<typename RBTree<K, M, C, V, A, S>::Iterator, typename RBTree<K, M, C, 
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-std::pair<typename RBTree<K, M, C, V, A, S>::ConstIterator, typename RBTree<K, M, C, V, A, S>::ConstIterator> RBTree<K, M, C, V, A, S>::equalRange(const K& key) const
+std::pair<typename RBTree<K, M, C, V, A, S>::ConstIterator, typename RBTree<K, M, C, V, A, S>::ConstIterator> RBTree<K, M, C, V, A, S>::equalRange(const K& k) const
 {
     ConstLinkType x = linkBegin();
     ConstLinkType y = linkEnd();
 
     while(x)
     {
-        if (mComparison(key(x), key))
+        if (mComparison(key(x), k))
             x = right(x);
-        else if (mComparison(key, key(x)))
+        else if (mComparison(k, key(x)))
         {
             y = x;
             x = left(x);
@@ -508,7 +508,7 @@ std::pair<typename RBTree<K, M, C, V, A, S>::ConstIterator, typename RBTree<K, M
 
             a = right(a);
 
-            return std::pair<ConstIterator, ConstIterator>(lowerBound(x, y, key), upperBound(a, b, key));
+            return std::pair<ConstIterator, ConstIterator>(lowerBound(x, y, k), upperBound(a, b, k));
         }
     }
 

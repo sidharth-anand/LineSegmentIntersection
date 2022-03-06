@@ -11,12 +11,6 @@ Point<T>::Point(T x, T y)
 }
 
 template <typename T>
-Point<T>::Point(T &&x, T &&y)
-    : mX(std::move(x)), mY(std::move(y))
-{
-}
-
-template <typename T>
 Point<T>::Point(const Point &other)
     : mX(other.mX), mY(other.mY)
 {
