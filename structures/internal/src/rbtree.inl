@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 template <typename K, typename M, typename C, typename V, typename A, typename S>
 RBTree<K, M, C, V, A, S>::RBTree()
     : mNodeAllocator()
@@ -533,7 +535,7 @@ typename RBTree<K, M, C, V, A, S>::LinkType RBTree<K, M, C, V, A, S>::createNode
 
     try
     {
-        getNodeAllocator().construct(temp, std::forward<Args>(args)...);
+        std::construct_at(temp, std::forward<Args>(args)...);
     }
     catch(const std::exception& e)
     {
@@ -547,7 +549,7 @@ typename RBTree<K, M, C, V, A, S>::LinkType RBTree<K, M, C, V, A, S>::createNode
 template <typename K, typename M, typename C, typename V, typename A, typename S>
 void RBTree<K, M, C, V, A, S>::destroyNode(RBTree<K, M, C, V, A, S>::LinkType node)
 {
-    getNodeAllocator().destroy(node);
+    std::destroy_at(node);
     putNode(node);
 }
 

@@ -1,18 +1,18 @@
 #include <memory>
 
-#include "internal/include/rbtreecolor.h"
-#include "internal/include/rbtreenodebase.h"
-#include "internal/include/rbtreenode.h"
-#include "internal/include/rbtreeiterator.h"
-#include "internal/include/rbtreeconstiterator.h"
-#include "internal/include/rbtreeutils.h"
+#include <internal/include/rbtreecolor.h>
+#include <internal/include/rbtreenodebase.h>
+#include <internal/include/rbtreenode.h>
+#include <internal/include/rbtreeiterator.h>
+#include <internal/include/rbtreeconstiterator.h>
+#include <internal/include/rbtreeutils.h>
 
 //TODO: Add concepts for each type here
 template <typename KeyType, typename MappedType, typename Comparison = std::less<KeyType>, typename ValueType = std::pair<const KeyType, MappedType>, typename Allocator = std::allocator<ValueType>, typename KeySelector = Select1<ValueType>>
 class RBTree
 {
 private:
-    typedef typename Allocator::template rebind<RBTreeNode<ValueType>>::other NodeAllocator;
+    typedef typename std::allocator_traits<Allocator>::template rebind_alloc<RBTreeNode<ValueType>>  NodeAllocator;
 
 protected:
     typedef RBTreeNodeBase*                 BasePointer;
@@ -208,4 +208,4 @@ private:
     NodeAllocator                           mNodeAllocator;
 };
 
-#include "internal/src/rbtree.inl"
+#include <internal/src/rbtree.inl>

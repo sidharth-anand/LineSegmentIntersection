@@ -1,6 +1,6 @@
 #pragma once
 
-#include "internal/include/rbtreecolor.h"
+#include <internal/include/rbtreecolor.h>
 
 struct RBTreeNodeBase
 {

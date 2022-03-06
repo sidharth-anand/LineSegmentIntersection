@@ -1,6 +1,6 @@
 #pragma once
 
-#include "internal/include/rbtreenodebase.h"
+#include <internal/include/rbtreenodebase.h>
 
 template <typename Value>
 struct RBTreeNode : public RBTreeNodeBase
@@ -17,4 +17,4 @@ public:
 
 };
 
-#include "internal/src/rbtreenode.inl"
+#include <internal/src/rbtreenode.inl>

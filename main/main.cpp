@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-#include "rbtree.h"
+#include <structures/rbtree.h>
 
 int main()
 {

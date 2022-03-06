@@ -1,6 +1,6 @@
 #pragma once
 
-#include "internal/include/rbtreeiterator.h"
+#include <internal/include/rbtreeiterator.h>
 
 template <typename T>
 struct RBTreeConstIterator
@@ -39,4 +39,4 @@ public:
     BasePointer                                 node;
 };
 
-#include "internal/src/rbtreeconstiterator.inl"
+#include <internal/src/rbtreeconstiterator.inl>
