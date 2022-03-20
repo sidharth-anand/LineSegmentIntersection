@@ -8,6 +8,7 @@ set (CMAKE_CXX_STANDARD_REQUIRED True)
 set (CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/build ${CMAKE_MODULE_PATH})
 
 option (BUILD_UNIT_TESTS "Build the unit tests project" ON)
+option (BUILD_DOCUMENTATION "Build the Doxygen Documentation" OFF)
 
 include (setup)
 
@@ -30,3 +31,24 @@ if (BUILD_UNIT_TESTS)
     message (STATUS "Configuring test")
     add_subdirectory (test)
 endif (BUILD_UNIT_TESTS)
+
+if (BUILD_DOCUMENTATION)
+    find_package (Doxygen)
+
+    if (DOXYGEN_FOUND)
+        set (DOCS_DIRECTORY ${PROJECT_SOURCE_DIR}/docs)
+
+        file (REMOVE_RECURSE ${DOCS_DIRECTORY})
+        file (MAKE_DIRECTORY ${DOCS_DIRECTORY})
+
+        message (STATUS "Generating Doxygen documentation")
+
+        add_custom_target( doc_doxygen ALL
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+            WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+        )
+
+    else ()
+        message (STATUS "Documentation not generated because Doxygen is required to generate the documentation. Please install it.")
+    endif ()    
+endif (BUILD_DOCUMENTATION)

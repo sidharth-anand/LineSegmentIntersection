@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<!-- BEGIN opengraph metadata -->
+<meta property="og:title" content="Doxygen Awesome" />
+<meta property="og:image" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta property="og:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<meta property="og:url" content="https://jothepro.github.io/doxygen-awesome-css/" />
+<!-- END opengraph metadata -->
+<!-- BEGIN twitter metadata -->
+<meta name="twitter:image:src" content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452" />
+<meta name="twitter:title" content="Doxygen Awesome" />
+<meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
+<!-- END twitter metadata -->
+<title>Bentley-Ottman: RBTree&lt; KeyType, MappedType, Comparison, ValueType, Allocator, KeySelector &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="toggle-alternative-theme.js"></script>
+<script type="text/javascript">
+    DoxygenAwesomeFragmentCopyButton.init()
+    DoxygenAwesomeDarkModeToggle.init()
+    DoxygenAwesomeParagraphLink.init()
+</script>
+<script>
+    window.setTimeout(() => {
+        document.getElementById('MSearchSelect').setAttribute('src', 'search/mag_sel.svg')
+    }, 50)
+</script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- https://tholman.com/github-corners/ -->
+<a href="https://github.com/sidharth-anand/LineSegmentIntersection" class="github-corner" title="View source on GitHub" target="_blank">
+    <svg viewBox="0 0 250 250" width="40" height="40" style="position: absolute; top: 0; border: 0; right: 0; z-index: 99;" aria-hidden="true">
+    <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Bentley-Ottman
+   </div>
+   <div id="projectbrief">Line Segment Intersection</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_r_b_tree.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="class_r_b_tree-members.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">RBTree&lt; KeyType, MappedType, Comparison, ValueType, Allocator, KeySelector &gt; Class Template Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aad03456f5bd516dfff7130fc912bb00c"><td class="memItemLeft" align="right" valign="top"><a id="aad03456f5bd516dfff7130fc912bb00c"></a>
+typedef ValueType *&#160;</td><td class="memItemRight" valign="bottom"><b>Pointer</b></td></tr>
+<tr class="separator:aad03456f5bd516dfff7130fc912bb00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f369dfaa435932b35f9f09a179544ca"><td class="memItemLeft" align="right" valign="top"><a id="a4f369dfaa435932b35f9f09a179544ca"></a>
+typedef ValueType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>Reference</b></td></tr>
+<tr class="separator:a4f369dfaa435932b35f9f09a179544ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacea0ba85e531c5573bd56889a79008"><td class="memItemLeft" align="right" valign="top"><a id="aaacea0ba85e531c5573bd56889a79008"></a>
+typedef <a class="el" href="struct_r_b_tree_node.html">RBTreeNode</a>&lt; ValueType &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>LinkType</b></td></tr>
+<tr class="separator:aaacea0ba85e531c5573bd56889a79008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff702b27d3600ffbefb6f29ed64ec7dd"><td class="memItemLeft" align="right" valign="top"><a id="aff702b27d3600ffbefb6f29ed64ec7dd"></a>
+typedef std::size_t&#160;</td><td class="memItemRight" valign="bottom"><b>SizeType</b></td></tr>
+<tr class="separator:aff702b27d3600ffbefb6f29ed64ec7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638751ef235a381229e7282745155c16"><td class="memItemLeft" align="right" valign="top"><a id="a638751ef235a381229e7282745155c16"></a>
+typedef Allocator&#160;</td><td class="memItemRight" valign="bottom"><b>AllocatorType</b></td></tr>
+<tr class="separator:a638751ef235a381229e7282745155c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4387b6c261b37f871b556a790ca1bd03"><td class="memItemLeft" align="right" valign="top"><a id="a4387b6c261b37f871b556a790ca1bd03"></a>
+typedef <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; ValueType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Iterator</b></td></tr>
+<tr class="separator:a4387b6c261b37f871b556a790ca1bd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e848d2d8f1ccc3d713b166b188d39f"><td class="memItemLeft" align="right" valign="top"><a id="a39e848d2d8f1ccc3d713b166b188d39f"></a>
+typedef <a class="el" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a>&lt; ValueType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ConstIterator</b></td></tr>
+<tr class="separator:a39e848d2d8f1ccc3d713b166b188d39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fb45ecdc0a229f7b5480bb047fb08b2"><td class="memItemLeft" align="right" valign="top"><a id="a6fb45ecdc0a229f7b5480bb047fb08b2"></a>
+typedef <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; ValueType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ReverseIterator</b></td></tr>
+<tr class="separator:a6fb45ecdc0a229f7b5480bb047fb08b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebaf3ee57114762f29d34d800fa506d0"><td class="memItemLeft" align="right" valign="top"><a id="aebaf3ee57114762f29d34d800fa506d0"></a>
+typedef <a class="el" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a>&lt; ValueType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ConstReverseIterator</b></td></tr>
+<tr class="separator:aebaf3ee57114762f29d34d800fa506d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad5ee3a07bd4a3d1f638c293f43f56677"><td class="memItemLeft" align="right" valign="top"><a id="ad5ee3a07bd4a3d1f638c293f43f56677"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RBTree</b> (const Comparison &amp;comparison, const AllocatorType &amp;allocator=AllocatorType())</td></tr>
+<tr class="separator:ad5ee3a07bd4a3d1f638c293f43f56677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb58e58e98eb09a58341e08e8e20438"><td class="memItemLeft" align="right" valign="top"><a id="aebb58e58e98eb09a58341e08e8e20438"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RBTree</b> (const <a class="el" href="class_r_b_tree.html">RBTree</a> &amp;other)</td></tr>
+<tr class="separator:aebb58e58e98eb09a58341e08e8e20438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af623a1bdd28d8798d984b3e856b95aae"><td class="memItemLeft" align="right" valign="top"><a id="af623a1bdd28d8798d984b3e856b95aae"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RBTree</b> (<a class="el" href="class_r_b_tree.html">RBTree</a> &amp;&amp;other)</td></tr>
+<tr class="separator:af623a1bdd28d8798d984b3e856b95aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76aa7abab954d6798b099aff56bd2009"><td class="memItemLeft" align="right" valign="top"><a id="a76aa7abab954d6798b099aff56bd2009"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>RBTree</b> (std::initializer_list&lt; ValueType &gt; values)</td></tr>
+<tr class="separator:a76aa7abab954d6798b099aff56bd2009"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed9e465edf48b6fecbdaca5a249ed12f"><td class="memTemplParams" colspan="2"><a id="aed9e465edf48b6fecbdaca5a249ed12f"></a>
+template&lt;typename InputIterator &gt; </td></tr>
+<tr class="memitem:aed9e465edf48b6fecbdaca5a249ed12f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RBTree</b> (InputIterator first, InputIterator last)</td></tr>
+<tr class="separator:aed9e465edf48b6fecbdaca5a249ed12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06719f5d1b14707487f813130d7d5f5a"><td class="memTemplParams" colspan="2"><a id="a06719f5d1b14707487f813130d7d5f5a"></a>
+template&lt;typename InputIterator &gt; </td></tr>
+<tr class="memitem:a06719f5d1b14707487f813130d7d5f5a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RBTree</b> (InputIterator first, InputIterator last, const Comparison &amp;comparison, const AllocatorType &amp;allocator=AllocatorType())</td></tr>
+<tr class="separator:a06719f5d1b14707487f813130d7d5f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa68f1e274b47d7532c2981d9908bc58d"><td class="memItemLeft" align="right" valign="top"><a id="aa68f1e274b47d7532c2981d9908bc58d"></a>
+NodeAllocator &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNodeAllocator</b> ()</td></tr>
+<tr class="separator:aa68f1e274b47d7532c2981d9908bc58d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a675b78226d344a653e8a3d866f56d241"><td class="memItemLeft" align="right" valign="top"><a id="a675b78226d344a653e8a3d866f56d241"></a>
+const NodeAllocator &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNodeAllocator</b> () const</td></tr>
+<tr class="separator:a675b78226d344a653e8a3d866f56d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae626c022ab5ae5348f80e5ae110c8bd8"><td class="memItemLeft" align="right" valign="top"><a id="ae626c022ab5ae5348f80e5ae110c8bd8"></a>
+AllocatorType&#160;</td><td class="memItemRight" valign="bottom"><b>getAllocator</b> () const</td></tr>
+<tr class="separator:ae626c022ab5ae5348f80e5ae110c8bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159d1a31e613da161c3e7299a24c10d8"><td class="memItemLeft" align="right" valign="top"><a id="a159d1a31e613da161c3e7299a24c10d8"></a>
+<a class="el" href="class_r_b_tree.html">RBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="class_r_b_tree.html">RBTree</a> &amp;other)</td></tr>
+<tr class="separator:a159d1a31e613da161c3e7299a24c10d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40819d367951f85939f92fd045626901"><td class="memItemLeft" align="right" valign="top"><a id="a40819d367951f85939f92fd045626901"></a>
+<a class="el" href="class_r_b_tree.html">RBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="class_r_b_tree.html">RBTree</a> &amp;&amp;other)</td></tr>
+<tr class="separator:a40819d367951f85939f92fd045626901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f6a93afcb6bf19498a20ce35cb8072"><td class="memItemLeft" align="right" valign="top"><a id="ac3f6a93afcb6bf19498a20ce35cb8072"></a>
+<a class="el" href="class_r_b_tree.html">RBTree</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (std::initializer_list&lt; ValueType &gt; values)</td></tr>
+<tr class="separator:ac3f6a93afcb6bf19498a20ce35cb8072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292c76921cfa604207b21755001e18d4"><td class="memItemLeft" align="right" valign="top"><a id="a292c76921cfa604207b21755001e18d4"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="separator:a292c76921cfa604207b21755001e18d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc782b01f16f27aa04e62df98bab80cd"><td class="memItemLeft" align="right" valign="top"><a id="acc782b01f16f27aa04e62df98bab80cd"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> () const</td></tr>
+<tr class="separator:acc782b01f16f27aa04e62df98bab80cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bfcd5430c000a9b0844d99321c92982"><td class="memItemLeft" align="right" valign="top"><a id="a1bfcd5430c000a9b0844d99321c92982"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> ()</td></tr>
+<tr class="separator:a1bfcd5430c000a9b0844d99321c92982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40132901799e5c383a0bc7fe9fbe046c"><td class="memItemLeft" align="right" valign="top"><a id="a40132901799e5c383a0bc7fe9fbe046c"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>end</b> () const</td></tr>
+<tr class="separator:a40132901799e5c383a0bc7fe9fbe046c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0d0ac824963335bdf03aca16996a1a8"><td class="memItemLeft" align="right" valign="top"><a id="ae0d0ac824963335bdf03aca16996a1a8"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">ReverseIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rbegin</b> ()</td></tr>
+<tr class="separator:ae0d0ac824963335bdf03aca16996a1a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2409e5a1110d2bf2c70737a484baab3"><td class="memItemLeft" align="right" valign="top"><a id="aa2409e5a1110d2bf2c70737a484baab3"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstReverseIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rbegin</b> () const</td></tr>
+<tr class="separator:aa2409e5a1110d2bf2c70737a484baab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355e4af8b5ae50abf591eb19cdf351ab"><td class="memItemLeft" align="right" valign="top"><a id="a355e4af8b5ae50abf591eb19cdf351ab"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">ReverseIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rend</b> ()</td></tr>
+<tr class="separator:a355e4af8b5ae50abf591eb19cdf351ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ecb373d9264cb208bbcb568a8cf1acb"><td class="memItemLeft" align="right" valign="top"><a id="a3ecb373d9264cb208bbcb568a8cf1acb"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstReverseIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>rend</b> () const</td></tr>
+<tr class="separator:a3ecb373d9264cb208bbcb568a8cf1acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdeadc8f7d1cfa034c54e255d95720ff"><td class="memItemLeft" align="right" valign="top"><a id="abdeadc8f7d1cfa034c54e255d95720ff"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cbegin</b> () const</td></tr>
+<tr class="separator:abdeadc8f7d1cfa034c54e255d95720ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ed18604c56cd2aa2ccdcbeed6d612a"><td class="memItemLeft" align="right" valign="top"><a id="ab4ed18604c56cd2aa2ccdcbeed6d612a"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cend</b> () const</td></tr>
+<tr class="separator:ab4ed18604c56cd2aa2ccdcbeed6d612a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a30c58314505628f76a27deb26e92f9"><td class="memItemLeft" align="right" valign="top"><a id="a3a30c58314505628f76a27deb26e92f9"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstReverseIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crbegin</b> () const</td></tr>
+<tr class="separator:a3a30c58314505628f76a27deb26e92f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af784b1c6d93a47302b4cce0bbd14a2dc"><td class="memItemLeft" align="right" valign="top"><a id="af784b1c6d93a47302b4cce0bbd14a2dc"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstReverseIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crend</b> () const</td></tr>
+<tr class="separator:af784b1c6d93a47302b4cce0bbd14a2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357caaf6cbac2d9982dabaa41fe0a956"><td class="memItemLeft" align="right" valign="top"><a id="a357caaf6cbac2d9982dabaa41fe0a956"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> () const</td></tr>
+<tr class="separator:a357caaf6cbac2d9982dabaa41fe0a956"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5072e546b2a47126c7a0c5ee4d250b72"><td class="memItemLeft" align="right" valign="top"><a id="a5072e546b2a47126c7a0c5ee4d250b72"></a>
+SizeType&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
+<tr class="separator:a5072e546b2a47126c7a0c5ee4d250b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a297f4f1e081d3a380b8a636fd3063b3f"><td class="memItemLeft" align="right" valign="top"><a id="a297f4f1e081d3a380b8a636fd3063b3f"></a>
+SizeType&#160;</td><td class="memItemRight" valign="bottom"><b>maxSize</b> () const</td></tr>
+<tr class="separator:a297f4f1e081d3a380b8a636fd3063b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85ae064718884e307f420a30811e2017"><td class="memItemLeft" align="right" valign="top"><a id="a85ae064718884e307f420a30811e2017"></a>
+MappedType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:a85ae064718884e307f420a30811e2017"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e0baa8296fd339b7e753ecc9c3b84b8"><td class="memItemLeft" align="right" valign="top"><a id="a6e0baa8296fd339b7e753ecc9c3b84b8"></a>
+MappedType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (KeyType &amp;&amp;key)</td></tr>
+<tr class="separator:a6e0baa8296fd339b7e753ecc9c3b84b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a0e199d10ebd999d69d8a0a3704552"><td class="memItemLeft" align="right" valign="top"><a id="ad9a0e199d10ebd999d69d8a0a3704552"></a>
+MappedType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>at</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:ad9a0e199d10ebd999d69d8a0a3704552"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa705da7618646c8817572fc015bfdada"><td class="memItemLeft" align="right" valign="top"><a id="aa705da7618646c8817572fc015bfdada"></a>
+const MappedType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>at</b> (const KeyType &amp;key) const</td></tr>
+<tr class="separator:aa705da7618646c8817572fc015bfdada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae886876b5e0d97b34145f3568b30ce7c"><td class="memItemLeft" align="right" valign="top"><a id="ae886876b5e0d97b34145f3568b30ce7c"></a>
+std::pair&lt; <a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (const ValueType &amp;value)</td></tr>
+<tr class="separator:ae886876b5e0d97b34145f3568b30ce7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b627722b02fe6804949ba02277b976c"><td class="memItemLeft" align="right" valign="top"><a id="a8b627722b02fe6804949ba02277b976c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (std::initializer_list&lt; ValueType &gt; values)</td></tr>
+<tr class="separator:a8b627722b02fe6804949ba02277b976c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0786df92be1712e0f7736ca26f07746e"><td class="memItemLeft" align="right" valign="top"><a id="a0786df92be1712e0f7736ca26f07746e"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>insert</b> (<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> position, const ValueType &amp;value)</td></tr>
+<tr class="separator:a0786df92be1712e0f7736ca26f07746e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4351ffb0d7a6e7cb740e4a8941a4466b"><td class="memItemLeft" align="right" valign="top"><a id="a4351ffb0d7a6e7cb740e4a8941a4466b"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> position)</td></tr>
+<tr class="separator:a4351ffb0d7a6e7cb740e4a8941a4466b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abef03b7d8a7dd76a89687097e6336d04"><td class="memItemLeft" align="right" valign="top"><a id="abef03b7d8a7dd76a89687097e6336d04"></a>
+SizeType&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:abef03b7d8a7dd76a89687097e6336d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa240ed0cee19527bbd4c6d0cde051507"><td class="memItemLeft" align="right" valign="top"><a id="aa240ed0cee19527bbd4c6d0cde051507"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> first, <a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> last)</td></tr>
+<tr class="separator:aa240ed0cee19527bbd4c6d0cde051507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad258747555988bb9e2260c7f32ed494"><td class="memItemLeft" align="right" valign="top"><a id="aad258747555988bb9e2260c7f32ed494"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>erase</b> (const KeyType &amp;first, const KeyType &amp;last)</td></tr>
+<tr class="separator:aad258747555988bb9e2260c7f32ed494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabfbeec8f7f8ee1cdc7f709bee69b91d"><td class="memItemLeft" align="right" valign="top"><a id="aabfbeec8f7f8ee1cdc7f709bee69b91d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>swap</b> (<a class="el" href="class_r_b_tree.html">RBTree</a> &amp;tree)</td></tr>
+<tr class="separator:aabfbeec8f7f8ee1cdc7f709bee69b91d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fe8e01f6bb82ce22e90cb9be038ddc3"><td class="memItemLeft" align="right" valign="top"><a id="a0fe8e01f6bb82ce22e90cb9be038ddc3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
+<tr class="separator:a0fe8e01f6bb82ce22e90cb9be038ddc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f5e72a920f069c9f7adae7c3f27d34"><td class="memItemLeft" align="right" valign="top"><a id="ae4f5e72a920f069c9f7adae7c3f27d34"></a>
+Comparison&#160;</td><td class="memItemRight" valign="bottom"><b>compareKeys</b> () const</td></tr>
+<tr class="separator:ae4f5e72a920f069c9f7adae7c3f27d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0149d638e617f518180bd4bca31c4147"><td class="memItemLeft" align="right" valign="top"><a id="a0149d638e617f518180bd4bca31c4147"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:a0149d638e617f518180bd4bca31c4147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eca5dcb31cc9d8ef89ec2cba7609ce6"><td class="memItemLeft" align="right" valign="top"><a id="a3eca5dcb31cc9d8ef89ec2cba7609ce6"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (const KeyType &amp;key) const</td></tr>
+<tr class="separator:a3eca5dcb31cc9d8ef89ec2cba7609ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f31390bdb35b1d6cea9aecb6eede15a"><td class="memItemLeft" align="right" valign="top"><a id="a6f31390bdb35b1d6cea9aecb6eede15a"></a>
+SizeType&#160;</td><td class="memItemRight" valign="bottom"><b>count</b> (const KeyType &amp;key) const</td></tr>
+<tr class="separator:a6f31390bdb35b1d6cea9aecb6eede15a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad91348a1bce8fa39c2efdd2b762d6a8"><td class="memItemLeft" align="right" valign="top"><a id="aad91348a1bce8fa39c2efdd2b762d6a8"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lowerBound</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:aad91348a1bce8fa39c2efdd2b762d6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae45cebc2159e200b6b66968a4f0b3971"><td class="memItemLeft" align="right" valign="top"><a id="ae45cebc2159e200b6b66968a4f0b3971"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>lowerBound</b> (const KeyType &amp;key) const</td></tr>
+<tr class="separator:ae45cebc2159e200b6b66968a4f0b3971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa00370cc27c5cc9419123fe07fad2d"><td class="memItemLeft" align="right" valign="top"><a id="a8fa00370cc27c5cc9419123fe07fad2d"></a>
+<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>upperBound</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:a8fa00370cc27c5cc9419123fe07fad2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a896c0eb96ce2ff7240158422ea772ca6"><td class="memItemLeft" align="right" valign="top"><a id="a896c0eb96ce2ff7240158422ea772ca6"></a>
+<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>upperBound</b> (const KeyType &amp;key) const</td></tr>
+<tr class="separator:a896c0eb96ce2ff7240158422ea772ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d840bcbf6301197bab696c45f89c63"><td class="memItemLeft" align="right" valign="top"><a id="a29d840bcbf6301197bab696c45f89c63"></a>
+std::pair&lt; <a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>, <a class="el" href="struct_r_b_tree_iterator.html">Iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>equalRange</b> (const KeyType &amp;key)</td></tr>
+<tr class="separator:a29d840bcbf6301197bab696c45f89c63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a5e32afda307af943d7c86bc9b6ef85"><td class="memItemLeft" align="right" valign="top"><a id="a2a5e32afda307af943d7c86bc9b6ef85"></a>
+std::pair&lt; <a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a>, <a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>equalRange</b> (const KeyType &amp;key) const</td></tr>
+<tr class="separator:a2a5e32afda307af943d7c86bc9b6ef85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0443f540d557cf1289862331f492036e"><td class="memTemplParams" colspan="2"><a id="a0443f540d557cf1289862331f492036e"></a>
+template&lt;typename InputIterator &gt; </td></tr>
+<tr class="memitem:a0443f540d557cf1289862331f492036e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><b>RBTree</b> (InputIterator first, InputIterator last, const C &amp;comparison, const A &amp;allocator)</td></tr>
+<tr class="separator:a0443f540d557cf1289862331f492036e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a443f7896f1a921795acc61ded3efd"><td class="memTemplParams" colspan="2"><a id="a38a443f7896f1a921795acc61ded3efd"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a38a443f7896f1a921795acc61ded3efd"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; typename <a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertUnique</b> (T &amp;&amp;value)</td></tr>
+<tr class="separator:a38a443f7896f1a921795acc61ded3efd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bcdf64a9d374439a23d41519cceb9a5"><td class="memTemplParams" colspan="2"><a id="a3bcdf64a9d374439a23d41519cceb9a5"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3bcdf64a9d374439a23d41519cceb9a5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertUnique</b> (<a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> position, T &amp;&amp;value)</td></tr>
+<tr class="separator:a3bcdf64a9d374439a23d41519cceb9a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae5f07d0c3f66110a568d47f175c1545"><td class="memTemplParams" colspan="2"><a id="aae5f07d0c3f66110a568d47f175c1545"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aae5f07d0c3f66110a568d47f175c1545"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertEqual</b> (<a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> position, T &amp;&amp;value)</td></tr>
+<tr class="separator:aae5f07d0c3f66110a568d47f175c1545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae372e6451f8e66969832ca49f4ded67c"><td class="memTemplParams" colspan="2"><a id="ae372e6451f8e66969832ca49f4ded67c"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae372e6451f8e66969832ca49f4ded67c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insert</b> (<a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::ConstBasePointer x, <a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::ConstBasePointer y, T &amp;&amp;value)</td></tr>
+<tr class="separator:ae372e6451f8e66969832ca49f4ded67c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7d901c2e41cda514b204c6f3444be3"><td class="memTemplParams" colspan="2"><a id="a9a7d901c2e41cda514b204c6f3444be3"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9a7d901c2e41cda514b204c6f3444be3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertLower</b> (<a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> x, <a class="el" href="class_r_b_tree.html">RBTree</a>&lt; K, M, C, V, A, S &gt;::<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> y, T &amp;&amp;value)</td></tr>
+<tr class="separator:a9a7d901c2e41cda514b204c6f3444be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a7fc109e0f23657510b8a9800723c9207"><td class="memItemLeft" align="right" valign="top"><a id="a7fc109e0f23657510b8a9800723c9207"></a>
+const typedef ValueType *&#160;</td><td class="memItemRight" valign="bottom"><b>ConstPointer</b></td></tr>
+<tr class="separator:a7fc109e0f23657510b8a9800723c9207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5525df2993c1d308e27a175a5672ffd0"><td class="memItemLeft" align="right" valign="top"><a id="a5525df2993c1d308e27a175a5672ffd0"></a>
+const typedef ValueType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ConstReference</b></td></tr>
+<tr class="separator:a5525df2993c1d308e27a175a5672ffd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f4c8cacc33242ade81534b7229bf80a"><td class="memItemLeft" align="right" valign="top"><a id="a6f4c8cacc33242ade81534b7229bf80a"></a>
+const typedef <a class="el" href="struct_r_b_tree_node.html">RBTreeNode</a>&lt; ValueType &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>ConstLinkType</b></td></tr>
+<tr class="separator:a6f4c8cacc33242ade81534b7229bf80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a3560fd7db0900d397e7b05523f47efa5"><td class="memItemLeft" align="right" valign="top"><a id="a3560fd7db0900d397e7b05523f47efa5"></a>
+typedef <a class="el" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>BasePointer</b></td></tr>
+<tr class="separator:a3560fd7db0900d397e7b05523f47efa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5b54ecc3b5f974c1f4edcc06439f604e"><td class="memItemLeft" align="right" valign="top"><a id="a5b54ecc3b5f974c1f4edcc06439f604e"></a>
+<a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getNode</b> ()</td></tr>
+<tr class="separator:a5b54ecc3b5f974c1f4edcc06439f604e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7147a0e4feb54289f1a062172f3167a6"><td class="memItemLeft" align="right" valign="top"><a id="a7147a0e4feb54289f1a062172f3167a6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>putNode</b> (<a class="el" href="struct_r_b_tree_node.html">LinkType</a> node)</td></tr>
+<tr class="separator:a7147a0e4feb54289f1a062172f3167a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25bd507e79934ab2f96e38b10da3b1b"><td class="memTemplParams" colspan="2"><a id="ac25bd507e79934ab2f96e38b10da3b1b"></a>
+template&lt;typename ... Args&gt; </td></tr>
+<tr class="memitem:ac25bd507e79934ab2f96e38b10da3b1b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>createNode</b> (Args &amp;&amp;... args)</td></tr>
+<tr class="separator:ac25bd507e79934ab2f96e38b10da3b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84b897fde2c4bad9e6689c82b680c4c"><td class="memItemLeft" align="right" valign="top"><a id="ab84b897fde2c4bad9e6689c82b680c4c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>destroyNode</b> (<a class="el" href="struct_r_b_tree_node.html">LinkType</a> node)</td></tr>
+<tr class="separator:ab84b897fde2c4bad9e6689c82b680c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4fd2171b8cbf48a0e788d2c7f3162c"><td class="memItemLeft" align="right" valign="top"><a id="a9d4fd2171b8cbf48a0e788d2c7f3162c"></a>
+<a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cloneNode</b> (ConstLinkType node)</td></tr>
+<tr class="separator:a9d4fd2171b8cbf48a0e788d2c7f3162c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef252174f3af73a541f722a703c3016"><td class="memItemLeft" align="right" valign="top"><a id="a1ef252174f3af73a541f722a703c3016"></a>
+<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>root</b> ()</td></tr>
+<tr class="separator:a1ef252174f3af73a541f722a703c3016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f93014ecc58ecb15c72b671ace543f3"><td class="memItemLeft" align="right" valign="top"><a id="a3f93014ecc58ecb15c72b671ace543f3"></a>
+ConstBasePointer&#160;</td><td class="memItemRight" valign="bottom"><b>root</b> () const</td></tr>
+<tr class="separator:a3f93014ecc58ecb15c72b671ace543f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f32670380c69844d0ab2d26e8052779"><td class="memItemLeft" align="right" valign="top"><a id="a2f32670380c69844d0ab2d26e8052779"></a>
+<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>leftmost</b> ()</td></tr>
+<tr class="separator:a2f32670380c69844d0ab2d26e8052779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf7df5edbfc115c8f8cb4976001761f8"><td class="memItemLeft" align="right" valign="top"><a id="abf7df5edbfc115c8f8cb4976001761f8"></a>
+ConstBasePointer&#160;</td><td class="memItemRight" valign="bottom"><b>leftmost</b> () const</td></tr>
+<tr class="separator:abf7df5edbfc115c8f8cb4976001761f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c3398bf5ce6b0dc47c9314b61735c3"><td class="memItemLeft" align="right" valign="top"><a id="ae6c3398bf5ce6b0dc47c9314b61735c3"></a>
+<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>rightmost</b> ()</td></tr>
+<tr class="separator:ae6c3398bf5ce6b0dc47c9314b61735c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac893ed07816d2c5be6c74efb19511141"><td class="memItemLeft" align="right" valign="top"><a id="ac893ed07816d2c5be6c74efb19511141"></a>
+ConstBasePointer&#160;</td><td class="memItemRight" valign="bottom"><b>rightmost</b> () const</td></tr>
+<tr class="separator:ac893ed07816d2c5be6c74efb19511141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d1c7d20b53370af015623295fb0bf94"><td class="memItemLeft" align="right" valign="top"><a id="a5d1c7d20b53370af015623295fb0bf94"></a>
+<a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>linkBegin</b> ()</td></tr>
+<tr class="separator:a5d1c7d20b53370af015623295fb0bf94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886b04e0db9847e3666879e0c5a36947"><td class="memItemLeft" align="right" valign="top"><a id="a886b04e0db9847e3666879e0c5a36947"></a>
+ConstLinkType&#160;</td><td class="memItemRight" valign="bottom"><b>linkBegin</b> () const</td></tr>
+<tr class="separator:a886b04e0db9847e3666879e0c5a36947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9aa728687113ac1baa5191cc3cfb77"><td class="memItemLeft" align="right" valign="top"><a id="aec9aa728687113ac1baa5191cc3cfb77"></a>
+<a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>linkEnd</b> ()</td></tr>
+<tr class="separator:aec9aa728687113ac1baa5191cc3cfb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479f47de7e9f19fca273ffb3bddd93d0"><td class="memItemLeft" align="right" valign="top"><a id="a479f47de7e9f19fca273ffb3bddd93d0"></a>
+ConstLinkType&#160;</td><td class="memItemRight" valign="bottom"><b>linkEnd</b> () const</td></tr>
+<tr class="separator:a479f47de7e9f19fca273ffb3bddd93d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cf3b5b003f4fc0cc69b440ba4cbe885"><td class="memTemplParams" colspan="2"><a id="a2cf3b5b003f4fc0cc69b440ba4cbe885"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2cf3b5b003f4fc0cc69b440ba4cbe885"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertUnique</b> (T &amp;&amp;value)</td></tr>
+<tr class="separator:a2cf3b5b003f4fc0cc69b440ba4cbe885"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a02a329e1e4a403558a08d7fbe9f8d3"><td class="memTemplParams" colspan="2"><a id="a2a02a329e1e4a403558a08d7fbe9f8d3"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a2a02a329e1e4a403558a08d7fbe9f8d3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertUnique</b> (<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> position, T &amp;&amp;value)</td></tr>
+<tr class="separator:a2a02a329e1e4a403558a08d7fbe9f8d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6596f4f05c7a2fc97603d14c961ba1a3"><td class="memTemplParams" colspan="2"><a id="a6596f4f05c7a2fc97603d14c961ba1a3"></a>
+template&lt;typename InputIterator &gt; </td></tr>
+<tr class="memitem:a6596f4f05c7a2fc97603d14c961ba1a3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertUnique</b> (InputIterator first, InputIterator last)</td></tr>
+<tr class="separator:a6596f4f05c7a2fc97603d14c961ba1a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38e8979c437c213e6725083b7cc2273"><td class="memTemplParams" colspan="2"><a id="ac38e8979c437c213e6725083b7cc2273"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac38e8979c437c213e6725083b7cc2273"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertEqual</b> (T &amp;&amp;value)</td></tr>
+<tr class="separator:ac38e8979c437c213e6725083b7cc2273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8bbf7b651941329fee22e0bf0e8d617"><td class="memTemplParams" colspan="2"><a id="ae8bbf7b651941329fee22e0bf0e8d617"></a>
+template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae8bbf7b651941329fee22e0bf0e8d617"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertEqual</b> (<a class="el" href="struct_r_b_tree_const_iterator.html">ConstIterator</a> position, T &amp;&amp;value)</td></tr>
+<tr class="separator:ae8bbf7b651941329fee22e0bf0e8d617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774e95770211a690f180198ea9c97515"><td class="memTemplParams" colspan="2"><a id="a774e95770211a690f180198ea9c97515"></a>
+template&lt;typename InputIterator &gt; </td></tr>
+<tr class="memitem:a774e95770211a690f180198ea9c97515"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>insertEqual</b> (InputIterator first, InputIterator last)</td></tr>
+<tr class="separator:a774e95770211a690f180198ea9c97515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
+Static Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5dec38512cb97c77f15051c7aca9956a"><td class="memItemLeft" align="right" valign="top"><a id="a5dec38512cb97c77f15051c7aca9956a"></a>
+static ConstReference&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> (ConstLinkType node)</td></tr>
+<tr class="separator:a5dec38512cb97c77f15051c7aca9956a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85aeacff4f78cca5b9d34b8b99beb07"><td class="memItemLeft" align="right" valign="top"><a id="ac85aeacff4f78cca5b9d34b8b99beb07"></a>
+static const KeyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>key</b> (ConstLinkType node)</td></tr>
+<tr class="separator:ac85aeacff4f78cca5b9d34b8b99beb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ceddd372aa3d37bb7a54735fb8b85b"><td class="memItemLeft" align="right" valign="top"><a id="a05ceddd372aa3d37bb7a54735fb8b85b"></a>
+static <a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>left</b> (<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> node)</td></tr>
+<tr class="separator:a05ceddd372aa3d37bb7a54735fb8b85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c55ff47f9bdbb54171b4983a589003e"><td class="memItemLeft" align="right" valign="top"><a id="a6c55ff47f9bdbb54171b4983a589003e"></a>
+static ConstLinkType&#160;</td><td class="memItemRight" valign="bottom"><b>left</b> (ConstBasePointer node)</td></tr>
+<tr class="separator:a6c55ff47f9bdbb54171b4983a589003e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae7286131fb79e5d254ea1517842194"><td class="memItemLeft" align="right" valign="top"><a id="a2ae7286131fb79e5d254ea1517842194"></a>
+static <a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>right</b> (<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> node)</td></tr>
+<tr class="separator:a2ae7286131fb79e5d254ea1517842194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2ec7bad678ed92bd4971f72c450f30"><td class="memItemLeft" align="right" valign="top"><a id="afa2ec7bad678ed92bd4971f72c450f30"></a>
+static ConstLinkType&#160;</td><td class="memItemRight" valign="bottom"><b>right</b> (ConstBasePointer node)</td></tr>
+<tr class="separator:afa2ec7bad678ed92bd4971f72c450f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057055adaf9a00f8d804cdce3a35a73b"><td class="memItemLeft" align="right" valign="top"><a id="a057055adaf9a00f8d804cdce3a35a73b"></a>
+static ConstReference&#160;</td><td class="memItemRight" valign="bottom"><b>value</b> (ConstBasePointer node)</td></tr>
+<tr class="separator:a057055adaf9a00f8d804cdce3a35a73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d12220f810d44412338382bcc55b96e"><td class="memItemLeft" align="right" valign="top"><a id="a3d12220f810d44412338382bcc55b96e"></a>
+static const KeyType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>key</b> (ConstBasePointer node)</td></tr>
+<tr class="separator:a3d12220f810d44412338382bcc55b96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e310a3d3f0ff5ae3497fad95ca94ba6"><td class="memItemLeft" align="right" valign="top"><a id="a6e310a3d3f0ff5ae3497fad95ca94ba6"></a>
+static <a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>minimum</b> (<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> node)</td></tr>
+<tr class="separator:a6e310a3d3f0ff5ae3497fad95ca94ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6234e86e252eb38704a71479afdb2b"><td class="memItemLeft" align="right" valign="top"><a id="abb6234e86e252eb38704a71479afdb2b"></a>
+static ConstBasePointer&#160;</td><td class="memItemRight" valign="bottom"><b>minimum</b> (ConstBasePointer node)</td></tr>
+<tr class="separator:abb6234e86e252eb38704a71479afdb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aafcc23b2b430c6489d97671ad53ccf"><td class="memItemLeft" align="right" valign="top"><a id="a6aafcc23b2b430c6489d97671ad53ccf"></a>
+static <a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>maximum</b> (<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a> node)</td></tr>
+<tr class="separator:a6aafcc23b2b430c6489d97671ad53ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee2ec878be4909b667dc9f9501056b2c"><td class="memItemLeft" align="right" valign="top"><a id="aee2ec878be4909b667dc9f9501056b2c"></a>
+static ConstBasePointer&#160;</td><td class="memItemRight" valign="bottom"><b>maximum</b> (ConstBasePointer node)</td></tr>
+<tr class="separator:aee2ec878be4909b667dc9f9501056b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a61ee73ee025f88229b5ba143d5c863ea"><td class="memItemLeft" align="right" valign="top"><a id="a61ee73ee025f88229b5ba143d5c863ea"></a>
+const typedef <a class="el" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>ConstBasePointer</b></td></tr>
+<tr class="separator:a61ee73ee025f88229b5ba143d5c863ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/structures/internal/include/<a class="el" href="internal_2include_2rbtree_8h_source.html">rbtree.h</a></li>
+<li>src/structures/internal/src/rbtree.inl</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_r_b_tree.html">RBTree</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
