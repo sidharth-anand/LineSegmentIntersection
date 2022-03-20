@@ -25,7 +25,7 @@ target_include_directories (${MODULE} PUBLIC
     ${CMAKE_CURRENT_BINARY_DIR}
     ${PROJECT_ROOT_DIR}
     ${PROJECT_ROOT_DIR}/src
-    ${PROJECT_ROOT_DIR}/thirdparty/googletest/include
+    ${PROJECT_ROOT_DIR}/thirdparty/googletest/googletest/include
     ${MODULE_INCLUDE}
 )
 
