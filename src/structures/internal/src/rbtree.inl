@@ -31,7 +31,7 @@ RBTree<K, M, C, V, A, S>::RBTree(const RBTree& other)
 {
     if (other.root() != nullptr)
     {
-        root() = copy(other.linkBegin(), other.linkEnd());
+        root() = copy(other.linkBegin(), linkEnd());
         leftmost() = minimum(root());
         rightmost() = maximum(root());
         mNodeCount = other.mNodeCount;
@@ -130,7 +130,7 @@ RBTree<K, M, C, V, A, S>& RBTree<K, M, C, V, A, S>::operator =(const RBTree<K, M
 
         if (other.root())
         {
-            root() = copy(other.linkBegin(), other.linkEnd());
+            root() = copy(other.linkBegin(), linkEnd());
             leftmost() = minimum(root());
             rightmost() = maximum(root());
             mNodeCount = other.size();
@@ -305,6 +305,13 @@ void RBTree<K, M, C, V, A, S>::insert(std::initializer_list<V> values)
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
+template <typename InputIterator>
+void RBTree<K, M, C, V, A, S>::insert(InputIterator first, InputIterator last)
+{
+    insertUnique(first, last);
+}
+
+template <typename K, typename M, typename C, typename V, typename A, typename S>
 typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::insert(RBTree<K, M, C, V, A, S>::ConstIterator position, const V& value)
 {
     return insertUnique(position, value);
@@ -340,7 +347,7 @@ typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::erase(RBTr
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-void RBTree<K, M, C, V, A, S>::erase(const K& first, const K& last)
+void RBTree<K, M, C, V, A, S>::erase(const K* first, const K* last)
 {
     while(first != last)
         erase(*first++);
@@ -368,7 +375,7 @@ void RBTree<K, M, C, V, A, S>::swap(RBTree<K, M, C, V, A, S>& other)
         other.root() = root();
         other.leftmost() = leftmost();
         other.rightmost() = rightmost();
-        other.root()->parent = &other.linkEnd();
+        other.root()->parent = other.linkEnd();
 
         root() = nullptr;
         leftmost() = linkEnd();
@@ -400,49 +407,51 @@ void RBTree<K, M, C, V, A, S>::clear()
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::find(const K& key)
+typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::find(const K& k)
 {
-    Iterator result = lowerBound(linkBegin(), linkEnd(), key);
-    return (result == end() || mComparison(key, key(result.node))) ? end() : result;
+    Iterator result = lowerBound(linkBegin(), linkEnd(), k);
+    return (result == end() || mComparison(k, key(result.node))) ? end() : result;
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::find(const K& key) const
+typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::find(const K& k) const
 {
-    ConstIterator result = lowerBound(linkBegin(), linkEnd(), key);
-    return (result == end() || mComparison(key, key(result.node))) ? end() : result;
+    ConstIterator result = lowerBound(linkBegin(), linkEnd(), k);
+    return (result == end() || mComparison(k, key(result.node))) ? end() : result;
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::SizeType RBTree<K, M, C, V, A, S>::count(const K& key) const
+typename RBTree<K, M, C, V, A, S>::SizeType RBTree<K, M, C, V, A, S>::count(const K& k) const
 {
-    std::pair<ConstIterator, ConstIterator> range = equalRange(key);
+    std::pair<ConstIterator, ConstIterator> range = equalRange(k);
     
-    return SizeType(std::distance(range.first, range.second));
+    return SizeType(0);
+    //TODO: Fix Disntance
+    //return SizeType(std::distance(range.first, range.second));
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::lowerBound(const K &key)
+typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::lowerBound(const K &k)
 {
-    return lowerBound(linkBegin(), linkEnd(), key);
+    return lowerBound(linkBegin(), linkEnd(), k);
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::lowerBound(const K &key) const
+typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::lowerBound(const K &k) const
 {
-    return lowerBound(linkBegin(), linkEnd(), key);
+    return lowerBound(linkBegin(), linkEnd(), k);
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::upperBound(const K& key)
+typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::upperBound(const K& k)
 {
-    return upperBound(linkBegin(), linkEnd(), key);
+    return upperBound(linkBegin(), linkEnd(), k);
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::upperBound(const K& key) const
+typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::upperBound(const K& k) const
 {
-    return upperBound(linkBegin(), linkEnd(), key);
+    return upperBound(linkBegin(), linkEnd(), k);
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
@@ -986,7 +995,7 @@ typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::lowerBound
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::lowerBound(RBTree<K, M, C, V, A, S>::ConstLinkType x, RBTree<K, M, C, V, A, S>::ConstLinkType y, const K& k)
+typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::lowerBound(RBTree<K, M, C, V, A, S>::ConstLinkType x, RBTree<K, M, C, V, A, S>::ConstLinkType y, const K& k) const
 {
     while (x)
     {
@@ -1020,7 +1029,7 @@ typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::upperBound
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
-typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::upperBound(RBTree<K, M, C, V, A, S>::ConstLinkType x, RBTree<K, M, C, V, A, S>::ConstLinkType y, const K& k)
+typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::upperBound(RBTree<K, M, C, V, A, S>::ConstLinkType x, RBTree<K, M, C, V, A, S>::ConstLinkType y, const K& k) const
 {
     while (x)
     {

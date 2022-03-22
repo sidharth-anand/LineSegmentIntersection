@@ -10,7 +10,7 @@ public:
                             Point(T x, T y);
                             Point(const Point &other);
                             Point(Point &&other);
-                            explicit Point(std::pair<T, T> point);
+    explicit                Point(std::pair<T, T> point);
 
     const T&                getX() const;
     void                    setX(const T &x);

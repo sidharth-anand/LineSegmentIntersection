@@ -190,7 +190,7 @@ TEST(Point, PointInequalityOperator)
     PointI p1(1, 2);
     PointI p2(2, 2);
 
-    EXPECT_FALSE(p1 != p2);
+    EXPECT_TRUE(p1 != p2);
 }
 TEST(Point, PointLessThanOperator)
 {

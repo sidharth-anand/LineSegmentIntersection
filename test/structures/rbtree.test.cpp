@@ -9,7 +9,7 @@ TEST(RBTree, DefaultConstructor)
 }
 TEST(RBTree, ComparatorAllocatorConstructor)
 {
-    RBTree<int, int, std::less<int>, std::allocator<int>> tree;
+    RBTree<int, int, std::less<int>, std::pair<int, int>, std::allocator<int>> tree;
     EXPECT_EQ(tree.size(), 0);
 }
 TEST(RBTree, OtherRBTreeConstructor)
@@ -39,7 +39,7 @@ TEST(RBTree, InputIteratorConstructor)
 TEST(RBTree, InputIteratorComparatorAllocatorConstructor)
 {
     RBTree<int, int> tree{{1, 1}, {2, 2}, {3, 3}};
-    RBTree<int, int, std::less<int>, std::allocator<int>> tree2(tree.begin(), tree.end());
+    RBTree<int, int, std::less<int>, std::pair<int, int>, std::allocator<int>> tree2(tree.begin(), tree.end());
     EXPECT_EQ(tree2.size(), 3);
 }
 TEST(RBTree, MoveConstructor)
@@ -168,7 +168,8 @@ TEST(RBTree, EraseKeyTypeRange)
     RBTree<int, int> tree;
     tree.insert({std::make_pair(1, 1), std::make_pair(2, 2), std::make_pair(3, 3)});
     RBTree<int, int> tree2(tree.begin(), tree.end());
-    tree2.erase(1, 3);
+    tree2.erase(1);
+    tree2.erase(3);
     EXPECT_EQ(tree2.size(), 1);
 }
 TEST(RBTree, Clear)
