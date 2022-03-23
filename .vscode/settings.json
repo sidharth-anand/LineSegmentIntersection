@@ -69,7 +69,21 @@
     "iostream": "cpp",
     "mutex": "cpp",
     "sstream": "cpp",
-    "thread": "cpp"
+    "thread": "cpp",
+    "bit": "cpp",
+    "charconv": "cpp",
+    "compare": "cpp",
+    "concepts": "cpp",
+    "format": "cpp",
+    "locale": "cpp",
+    "stop_token": "cpp",
+    "variant": "cpp",
+    "xhash": "cpp",
+    "xlocbuf": "cpp",
+    "xlocmes": "cpp",
+    "xlocmon": "cpp",
+    "xloctime": "cpp",
+    "xtree": "cpp"
   },
   "cmake.configureOnOpen": false
 }

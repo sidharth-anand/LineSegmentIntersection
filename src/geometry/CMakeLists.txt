@@ -8,6 +8,7 @@ list (APPEND MODULE_SRC "internal/include/linesegment.h")
 list (APPEND MODULE_SRC "internal/src/linesegment.inl")
 list (APPEND MODULE_SRC "internal/include/point.h")
 list (APPEND MODULE_SRC "internal/src/point.inl")
+list (APPEND MODULE_SRC "internal/src/geometry.cpp")
 
 set (MODULE_SET_LANGUAGE ON)
 set (MODULE_LANGUAGE "CXX")

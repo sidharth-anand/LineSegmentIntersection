@@ -250,8 +250,8 @@ TEST(RBTree, EqualRangeIterator)
     std::pair<RBTree<int, int>::Iterator, RBTree<int, int>::Iterator> range = tree.equalRange(2);
     EXPECT_EQ(range.first->first, 2);
     EXPECT_EQ(range.first->second, 2);
-    EXPECT_EQ(range.second->first, 2);
-    EXPECT_EQ(range.second->second, 2);
+    EXPECT_EQ(range.second->first, 3);
+    EXPECT_EQ(range.second->second, 3);
 }
 TEST(RBTree, EqualRangeConstIterator)
 {
@@ -260,6 +260,6 @@ TEST(RBTree, EqualRangeConstIterator)
     std::pair<RBTree<int, int>::ConstIterator, RBTree<int, int>::ConstIterator> range = tree.equalRange(2);
     EXPECT_EQ(range.first->first, 2);
     EXPECT_EQ(range.first->second, 2);
-    EXPECT_EQ(range.second->first, 2);
-    EXPECT_EQ(range.second->second, 2);
+    EXPECT_EQ(range.second->first, 3);
+    EXPECT_EQ(range.second->second, 3);
 }

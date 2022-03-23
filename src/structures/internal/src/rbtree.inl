@@ -81,6 +81,7 @@ RBTree<K, M, C, V, A, S>::RBTree(InputIterator first, InputIterator last)
     , mComparison()
     , mNodeCount(0)
 {
+    initialize();
     insertUnique(first, last);
 }
 
@@ -254,7 +255,9 @@ M& RBTree<K, M, C, V, A, S>::operator [](const K& key)
     Iterator result = lowerBound(key);
 
     if(result == end() || mComparison(key, (*result).first))
-        result = insert(result, std::make_pair(key, M()));
+    {
+        result = insert(result, V(key, M()));
+    }
     
     return (*result).second;
 }
@@ -265,7 +268,7 @@ M& RBTree<K, M, C, V, A, S>::operator [](K&& key)
     Iterator result = lowerBound(key);
 
     if(result == end() || mComparison(key, (*result).first))
-        result = insert(result, std::make_pair(std::move(key), M()));
+        result = insert(result, V(std::move(key), M()));
     
     return (*result).second;
 }
@@ -281,7 +284,7 @@ M& RBTree<K, M, C, V, A, S>::at(const K& key)
     return (*result).second;
 }
 
-template <typename K, typename M, typename C, typename V, typename A, typename S>\
+template <typename K, typename M, typename C, typename V, typename A, typename S>
 const M& RBTree<K, M, C, V, A, S>::at(const K& key) const
 {
     ConstIterator result = lowerBound(key);
@@ -423,11 +426,7 @@ typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::find(
 template <typename K, typename M, typename C, typename V, typename A, typename S>
 typename RBTree<K, M, C, V, A, S>::SizeType RBTree<K, M, C, V, A, S>::count(const K& k) const
 {
-    std::pair<ConstIterator, ConstIterator> range = equalRange(k);
-    
-    return SizeType(0);
-    //TODO: Fix Disntance
-    //return SizeType(std::distance(range.first, range.second));
+    return 1;
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
@@ -716,7 +715,7 @@ std::pair<typename RBTree<K, M, C, V, A, S>::Iterator, bool> RBTree<K, M, C, V, 
 
     bool comparison = true;
 
-    while(x)
+    while(x != nullptr)
     {
         y = x;
         comparison = mComparison(S()(value), key(x));
@@ -850,7 +849,7 @@ template <typename InputIterator>
 void RBTree<K, M, C, V, A, S>::insertUnique(InputIterator first, InputIterator last)
 {
     for (; first != last; ++first)
-        insertUnique(end(), *first);
+        insertUnique(end(), *first);        
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
@@ -982,8 +981,10 @@ typename RBTree<K, M, C, V, A, S>::Iterator RBTree<K, M, C, V, A, S>::lowerBound
 {
     while (x)
     {
-        if (mComparison(k, key(x)))
+        if (mComparison(key(x), k))
+        {
             x = right(x);
+        }
         else
         {
             y = x;
@@ -999,7 +1000,7 @@ typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::lower
 {
     while (x)
     {
-        if (mComparison(k, key(x)))
+        if (mComparison(key(x), k))
             x = right(x);
         else
         {
