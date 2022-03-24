@@ -2,6 +2,6 @@
 
 #include <internal/include/point.h>
 
-typedef Point<int> PointI;
-typedef Point<float> PointF;
-typedef Point<double> PointD;
+using PointI = Point<int>;
+using PointF = Point<float>;
+using PointD = Point<double>;

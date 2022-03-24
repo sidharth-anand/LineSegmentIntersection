@@ -10,15 +10,16 @@ public:
                             Point(T x, T y);
                             Point(const Point &other);
                             Point(Point &&other);
-    explicit                Point(std::pair<T, T> point);
+                            explicit Point(std::pair<T, T> point);
 
     const T&                getX() const;
     void                    setX(const T &x);
 
     const T&                getY() const;
-    void	                setY(const T &y);
+    const T&                setY(const T &y);
 
     std::pair<T, T>         getCoordinates() const;
+    void                    setCoordinates(const T &x, const T &y);
 
     Point<T>&               operator=(const Point<T> &other);
     Point<T>&               operator=(Point<T> &&other);
