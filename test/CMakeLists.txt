@@ -8,9 +8,9 @@ set (TEST_MODULE_LIST
     geometry
 )
 
-set (LINK_LIBRARIES ${TEST_MODULE_LIST})
 set (TEST_SOURCE "")
 set (TEST_INCLUDES "")
+set (TEST_DEPENDS "")
 
 foreach (TEST_MODULE IN LISTS TEST_MODULE_LIST)
     add_subdirectory (${TEST_MODULE})
@@ -35,7 +35,7 @@ if (CC_IS_MSVC)
     target_link_options(${EXECUTABLE_NAME} PRIVATE /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup)
 endif(CC_IS_MSVC)
 
-target_link_libraries (${EXECUTABLE_NAME} ${LINK_LIBS} gtest gmock)
+target_link_libraries (${EXECUTABLE_NAME} ${TEST_DEPENDS} gtest gmock)
 target_include_directories (${EXECUTABLE_NAME} PRIVATE 
     ${PROJECT_BINARY_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}

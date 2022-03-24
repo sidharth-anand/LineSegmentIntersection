@@ -1,5 +1,5 @@
 set (EXECUTABLE_NAME intersection)
-set (INTERSECTION_OUTPUT_NAME "LineIntersection1")
+set (INTERSECTION_OUTPUT_NAME "LineIntersection")
 
 include (platform)
 
