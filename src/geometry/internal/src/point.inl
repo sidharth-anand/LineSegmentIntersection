@@ -47,7 +47,7 @@ const T &Point<T>::getY() const
 }
 
 template <typename T>
-const T &Point<T>::setY(const T &y)
+void Point<T>::setY(const T &y)
 {
     mY = y;
 }

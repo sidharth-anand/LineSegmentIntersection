@@ -90,11 +90,13 @@ public:
     std::pair<Iterator, bool>               insert(const ValueType& value);
     void                                    insert(std::initializer_list<ValueType> values);
     Iterator                                insert(ConstIterator position, const ValueType& value);
+    template <typename InputIterator> //TODO: Add a concept for this type
+    void                                    insert(InputIterator first, InputIterator last);
     
     Iterator                                erase(ConstIterator position);
     SizeType                                erase(const KeyType& key);
     Iterator                                erase(ConstIterator first, ConstIterator last);
-    void                                    erase(const KeyType& first, const KeyType& last);
+    void                                    erase(const KeyType* first, const KeyType* last);
 
     void                                    swap(RBTree& tree);
 
@@ -192,10 +194,10 @@ private:
     void                                    auxilliaryErase(ConstIterator first, ConstIterator last);
 
     Iterator                                lowerBound(LinkType x, LinkType y, const KeyType& key);         
-    ConstIterator                           lowerBound(ConstLinkType x, ConstLinkType y, const KeyType& key);
+    ConstIterator                           lowerBound(ConstLinkType x, ConstLinkType y, const KeyType& key) const;
 
     Iterator                                upperBound(LinkType x, LinkType y, const KeyType& key);
-    ConstIterator                           upperBound(ConstLinkType x, ConstLinkType y, const KeyType& key);
+    ConstIterator                           upperBound(ConstLinkType x, ConstLinkType y, const KeyType& key) const;
 
     static void                             rotateLeft(BasePointer const node, BasePointer& root);
     static void                             rotateRight(BasePointer const node, BasePointer& root);
