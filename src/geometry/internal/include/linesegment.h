@@ -3,6 +3,7 @@
 #include <memory>
 
 #include <internal/include/point.h>
+#include <internal/include/slope.h>
 
 template <typename T>
 class LineSegment
@@ -27,9 +28,19 @@ public:
     LineSegment<T>&                 operator =(LineSegment<T>&& other);
     LineSegment<T>&                 operator =(std::pair<Point<T>, Point<T>> other);
 
+    T                               high(const Point<T>& point) const;
+    bool                            less(const LineSegment<T>& other, const Point<T>& point);
+
+    bool                            intersect(const LineSegment<T>& other, Point<T>& point);
+
+    bool                            is_rend(const Point<T>& point);
+    bool                            is_lend(const Point<T>& point);
+    bool                            contains(const Point<T>& point);
+
 private:
     Point<T>                        mStart;
     Point<T>                        mEnd;
+    Slope<T>                        mSlope;
 };
 
 #include <internal/src/linesegment.inl>

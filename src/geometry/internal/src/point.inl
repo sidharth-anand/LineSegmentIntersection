@@ -52,10 +52,19 @@ const T &Point<T>::setY(const T &y)
     mY = y;
 }
 
+
 template <typename T>
 std::pair<T, T> Point<T>::getCoordinates() const
 {
     return std::make_pair(mX, mY);
+}
+
+//setCoordinates function
+template <typename T>
+void Point<T>::setCoordinates(const T &x, const T &y)
+{
+    mX = x;
+    mY = y;
 }
 
 template <typename T>
@@ -153,3 +162,6 @@ bool operator>=(const Point<T> &lhs, const Point<T> &rhs)
 {
     return !(lhs < rhs);
 }
+
+template <typename T>
+

@@ -19,6 +19,7 @@ public:
     const T&                setY(const T &y);
 
     std::pair<T, T>         getCoordinates() const;
+    void                    setCoordinates(const T &x, const T &y);
 
     Point<T>&               operator=(const Point<T> &other);
     Point<T>&               operator=(Point<T> &&other);
