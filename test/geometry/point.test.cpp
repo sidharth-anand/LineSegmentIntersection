@@ -1,89 +1,103 @@
 #include <gtest/gtest.h>
 
 #include <geometry/point.h>
+
 TEST(Point, DefaultConstructor)
 {
     PointI p;
     EXPECT_EQ(p.getX(), 0);
     EXPECT_EQ(p.getY(), 0);
 }
+
 TEST(Point, Constructor)
 {
     PointI p(1, 2);
     EXPECT_EQ(p.getX(), 1);
     EXPECT_EQ(p.getY(), 2);
 }
+
 TEST(Point, MoveConstructor)
 {
-    PointI p(1, 2);
-    PointI p2(std::move(p));
+    PointI p1(1, 2);
+    PointI p2(std::move(p1));
     EXPECT_EQ(p2.getX(), 1);
     EXPECT_EQ(p2.getY(), 2);
 }
+
 TEST(Point, CopyConstructor)
 {
-    PointI p(1, 2);
-    PointI p2(p);
+    PointI p1(1, 2);
+    PointI p2(p1);
     EXPECT_EQ(p2.getX(), 1);
     EXPECT_EQ(p2.getY(), 2);
 }
+
 TEST(Point, PairConstructor)
 {
     PointI p(1, 2);
     EXPECT_EQ(p.getX(), 1);
     EXPECT_EQ(p.getY(), 2);
 }
+
 TEST(Point, GetX)
 {
     PointI p(1, 2);
     EXPECT_EQ(p.getX(), 1);
 }
+
 TEST(Point, GetY)
 {
     PointI p(1, 2);
     EXPECT_EQ(p.getY(), 2);
 }
+
 TEST(Point, SetX)
 {
     PointI p(1, 2);
     p.setX(3);
     EXPECT_EQ(p.getX(), 3);
 }
+
 TEST(Point, SetY)
 {
     PointI p(1, 2);
     p.setY(3);
     EXPECT_EQ(p.getY(), 3);
 }
+
 TEST(Point, GetCoordinates)
 {
     PointI p(1, 2);
     EXPECT_EQ(p.getCoordinates(), std::make_pair(1, 2));
 }
+
 TEST(Point, AssignmentOperator)
 {
-    PointI p(1, 2);
+    PointI p1(1, 2);
     PointI p2;
-    p2 = p;
+    p2 = p1;
     EXPECT_EQ(p2.getX(), 1);
     EXPECT_EQ(p2.getY(), 2);
 }
+
 TEST(Point, MoveAssignmentOperator)
 {
-    PointI p(1, 2);
+    PointI p1(1, 2);
     PointI p2;
-    p2 = std::move(p);
+    p2 = std::move(p1);
     EXPECT_EQ(p2.getX(), 1);
     EXPECT_EQ(p2.getY(), 2);
 }
+
 TEST(Point, CopyAssignmentOperator)
 {
-    PointI p(1, 2);
+    PointI p1(1, 2);
     PointI p2;
-    p2 = p;
+    p2 = p1;
     EXPECT_EQ(p2.getX(), 1);
     EXPECT_EQ(p2.getY(), 2);
 }
+
 
 TEST(Point, PointAddition)
 {
@@ -95,6 +109,7 @@ TEST(Point, PointAddition)
     EXPECT_EQ(p3.getX(), 4);
     EXPECT_EQ(p3.getY(), 6);
 }
+
 TEST(Point, PointSubtraction)
 {
     PointI p1(1, 2);
@@ -105,6 +120,7 @@ TEST(Point, PointSubtraction)
     EXPECT_EQ(p3.getX(), -2);
     EXPECT_EQ(p3.getY(), -2);
 }
+
 TEST(Point, PointScalarMultiplication)
 {
     PointI p1(1, 2);
@@ -114,6 +130,7 @@ TEST(Point, PointScalarMultiplication)
     EXPECT_EQ(p2.getX(), 3);
     EXPECT_EQ(p2.getY(), 6);
 }
+
 TEST(Point, PointScalarDivision)
 {
     PointI p1(1, 2);
@@ -123,6 +140,7 @@ TEST(Point, PointScalarDivision)
     EXPECT_EQ(p2.getX(), 1 / 3);
     EXPECT_EQ(p2.getY(), 2 / 3);
 }
+
 TEST(Point, PointEquality)
 {
     PointI p1(1, 2);
@@ -130,6 +148,7 @@ TEST(Point, PointEquality)
 
     EXPECT_EQ(p1, p2);
 }
+
 TEST(Point, PointInequality)
 {
     PointI p1(1, 2);
@@ -137,6 +156,7 @@ TEST(Point, PointInequality)
 
     EXPECT_NE(p1, p2);
 }
+
 TEST(Point, PointLessThan)
 {
     PointI p1(1, 2);
@@ -144,6 +164,7 @@ TEST(Point, PointLessThan)
 
     EXPECT_LT(p1, p2);
 }
+
 TEST(Point, PointGreaterThan)
 {
     PointI p1(1, 2);
@@ -151,6 +172,7 @@ TEST(Point, PointGreaterThan)
 
     EXPECT_GT(p2, p1);
 }
+
 TEST(Point, LessThanOrEqualTo)
 {
     PointI p1(1, 2);
@@ -160,6 +182,7 @@ TEST(Point, LessThanOrEqualTo)
     EXPECT_LE(p1, p2);
     EXPECT_LE(p1, p3);
 }
+
 TEST(Point, GreaterThanOrEqualTo)
 {
     PointI p1(1, 2);
@@ -169,6 +192,7 @@ TEST(Point, GreaterThanOrEqualTo)
     EXPECT_GE(p2, p1);
     EXPECT_GE(p3, p1);
 }
+
 TEST(Point, PointAssignment)
 {
     PointI p1(1, 2);
@@ -178,6 +202,7 @@ TEST(Point, PointAssignment)
 
     EXPECT_EQ(p1, p2);
 }
+
 TEST(Point, PointEqualityOperator)
 {
     PointI p1(1, 2);
@@ -185,6 +210,7 @@ TEST(Point, PointEqualityOperator)
 
     EXPECT_TRUE(p1 == p2);
 }
+
 TEST(Point, PointInequalityOperator)
 {
     PointI p1(1, 2);
@@ -192,6 +218,7 @@ TEST(Point, PointInequalityOperator)
 
     EXPECT_TRUE(p1 != p2);
 }
+
 TEST(Point, PointLessThanOperator)
 {
     PointI p1(1, 2);
@@ -199,6 +226,7 @@ TEST(Point, PointLessThanOperator)
 
     EXPECT_TRUE(p1 < p2);
 }
+
 TEST(Point, PointGreaterThanOperator)
 {
     PointI p1(1, 2);
@@ -206,6 +234,7 @@ TEST(Point, PointGreaterThanOperator)
 
     EXPECT_TRUE(p2 > p1);
 }
+
 TEST(Point, LessThanOrEqualToOperator)
 {
     PointI p1(1, 2);
@@ -215,6 +244,7 @@ TEST(Point, LessThanOrEqualToOperator)
     EXPECT_TRUE(p1 <= p2);
     EXPECT_TRUE(p1 <= p3);
 }
+
 TEST(Point, GreaterThanOrEqualToOperator)
 {
     PointI p1(1, 2);
