@@ -2,6 +2,20 @@
 
 #include <internal/include/point.h>
 
-typedef Point<int> PointI;
-typedef Point<float> PointF;
-typedef Point<double> PointD;
+/**
+ * @brief Type definition for a point with integer X and Y coordinates
+ *
+ */
+typedef Point<int>      PointI;
+
+/**
+ * @brief Type definition for a point with floating point X and Y coordinates
+ *
+ */
+typedef Point<float>    PointF;
+
+/**
+ * @brief Type definition for a point with double point X and Y coordinates
+ *
+ */
+typedef Point<double>   PointD;
