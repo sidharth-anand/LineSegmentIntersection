@@ -1,8 +1,10 @@
 #pragma once
 
 #include <memory>
+#include <optional>
 
 #include <internal/include/point.h>
+#include <internal/include/slope.h>
 
 template <typename T>
 class LineSegment
@@ -27,9 +29,27 @@ public:
     LineSegment<T>&                 operator =(LineSegment<T>&& other);
     LineSegment<T>&                 operator =(std::pair<Point<T>, Point<T>> other);
 
+    T                               high(const Point<T>& point) const;
+    bool                            less(const LineSegment<T>& other, const Point<T>& point) const;
+
+    std::optional<Point<T>>         intersects(const LineSegment<T>& other) const;
+
+    bool                            isRightEnd(const Point<T>& point) const;
+    bool                            isLeftEnd(const Point<T>& point) const;
+
+    bool                            contains(const Point<T>& point) const;
+
+private:
+    void                            calculateSlope();
+
 private:
     Point<T>                        mStart;
     Point<T>                        mEnd;
+    Slope                           mSlope;
 };
 
 #include <internal/src/linesegment.inl>
+
+using LineSegmentI = LineSegment<int>;
+using LineSegmentF = LineSegment<float>;
+using LineSegmentD = LineSegment<double>;

@@ -426,7 +426,10 @@ typename RBTree<K, M, C, V, A, S>::ConstIterator RBTree<K, M, C, V, A, S>::find(
 template <typename K, typename M, typename C, typename V, typename A, typename S>
 typename RBTree<K, M, C, V, A, S>::SizeType RBTree<K, M, C, V, A, S>::count(const K& k) const
 {
-    return 1;
+    if (find(k) != end())
+        return 1;
+    else
+        return 0;
 }
 
 template <typename K, typename M, typename C, typename V, typename A, typename S>
