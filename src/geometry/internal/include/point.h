@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <memory>
 
 /**
@@ -28,21 +29,21 @@ public:
     Point( T x, T y );
 
     /**
-     * @brief Construct a new Point object with the same coordinates as another point object
+     * @brief Construct a new Point object with the same values as another given Point.
      *
-     * @param other The other point object
+     * @param other
      */
     Point( const Point& other );
 
     /**
-     * @brief Construct a new Point object with the same coordinates as another point object
+     * @brief Construct a new Point object with the same values as another given Point.
      *
-     * @param other Point object to copy X and Y coordinates from
+     * @param other
      */
     Point( Point&& other );
 
     /**
-     * @brief Construct a new Point object with the given coordinates
+     * @brief Construct a new Point object using a pair of the X and Y coordinates.
      *
      * @param point Pair of coordinates (X, Y) to use to construct the Point
      */
@@ -77,11 +78,34 @@ public:
     const T &setY( const T& y );
 
     /**
+     * @brief Get the Y coordinate
+     *
+     * @return const T& The current Y coordinate
+     */
+    const T &getY() const;
+
+    /**
+     * @brief Set the Y coordinate
+     *
+     * @param y The Y coordinate to set
+     * @return const T& The set Y coordinate
+     */
+    const T &setY( const T& y );
+
+    /**
      * @brief Get the X and Y coordinates as a pair
      *
      * @return Pair of coordinates (X, Y) used to construct the point
      */
     std::pair<T, T> getCoordinates() const;
+
+    /**
+     * @brief Set the X and Y coordinates to new values
+     *
+     * @param x The new X coordinate to set
+     * @param y The new Y coordinate to set
+     */
+    void setCoordinates( const T& x, const T& y );
 
     /**
      * @brief Point Assignemnt operator using another Point
@@ -182,3 +206,7 @@ private:
 };
 
 #include <internal/src/point.inl>
+
+using PointI = Point<int>;
+using PointF = Point<float>;
+using PointD = Point<double>;
