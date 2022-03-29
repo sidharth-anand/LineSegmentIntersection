@@ -13,3 +13,8 @@ Slope::Slope(double value, Type type)
 {
 
 }
+
+bool Slope::operator <(const Slope& other) const
+{
+    return type != Type::Infinite && (other.type == Type::Infinite || value < other.value);
+}

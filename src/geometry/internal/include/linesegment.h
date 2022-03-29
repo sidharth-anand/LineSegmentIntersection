@@ -118,7 +118,7 @@ public:
 
     /**
      * @brief Computes the high of a line segment.
-     * 
+     *
      * High of the line segment is:
      *  - Undefined if line segment doesn't cross the vertical line with the abcissa of the given poin.
      *  - If line segment is vertical:
@@ -136,10 +136,10 @@ public:
      * @brief Returns the order of the line segment relative to a given point
      *
      * A line segment is less than another line segment if its high is less than the other line segment's high.
-     * 
+     *
      * @param other Line segment to compare with
      * @param point Sweeping point to use in the comparison
-     * @return true If this segment is less than the other segment 
+     * @return true If this segment is less than the other segment
      * @return false If this segment is greater than or equal the other segment
      */
     bool less( const LineSegment<T>& other, const Point<T>& point ) const;
@@ -187,6 +187,8 @@ private:
      *
      */
     void calculateSlope();
+
+    void orderPoints();
 
 private:
     /**

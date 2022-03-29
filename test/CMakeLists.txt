@@ -32,7 +32,7 @@ if (CC_IS_MINGW)
 endif(CC_IS_MINGW)
 
 if (CC_IS_MSVC)
-    target_link_options(${EXECUTABLE_NAME} PRIVATE /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup)
+    target_link_options(${EXECUTABLE_NAME} PRIVATE /SUBSYSTEM:CONSOLE /ENTRY:mainCRTStartup)
 endif(CC_IS_MSVC)
 
 target_link_libraries (${EXECUTABLE_NAME} ${TEST_DEPENDS} gtest gmock)

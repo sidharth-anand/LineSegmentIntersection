@@ -3,9 +3,9 @@
 #include <cstdlib>
 
 /**
- * @brief Structure for a selected node in the red-black tree
+ * @brief Simple structure to select the first value from a given pair of objects.
  *
- * @tparam Pair
+ * @tparam Pair Generic type of the pair.
  */
 template <class Pair>
 struct Select1

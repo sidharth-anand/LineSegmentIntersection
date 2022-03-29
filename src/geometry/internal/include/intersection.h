@@ -8,22 +8,25 @@
 
 #include <structures/rbtree.h>
 
+//TODO: Use smart pointers instead of LineSegmentD*
+//TODO: Clean up to use return values instead of modyfing reference params
+
 using EventQueue = RBTree<PointD, std::vector<LineSegmentD*>>;
 using StatusQueue = RBTree<PointD, std::vector<LineSegmentD*>>;
 
 using LineSegmentComparator = std::function<bool(LineSegmentD*, LineSegmentD*)>;
 using LineSegmentTree = RBTree<LineSegmentD*, PointD, LineSegmentComparator>;
 
-void findNeighbours(const PointD& point, LineSegmentTree& tree, LineSegmentD*& above, LineSegmentD*& below);
+void findNeighbours(const PointD& point, const LineSegmentTree& tree, LineSegmentD*& above, LineSegmentD*& below);
 
 LineSegmentD* findLeftmost(std::vector<LineSegmentD*>& segments, const PointD& point);
-LineSegmentD* findRightmost(std::vector<LineSegmentD*>& segments, PointD point);
+LineSegmentD* findRightmost(std::vector<LineSegmentD*>& segments, const PointD& point);
 
-LineSegmentD* findLeftNeighbour(LineSegmentD* line, LineSegmentTree& tree);
-LineSegmentD* findRightNeighbour(LineSegmentD* line, LineSegmentTree& tree);
+LineSegmentD* findLeftNeighbour(LineSegmentD* line, const LineSegmentTree& tree);
+LineSegmentD* findRightNeighbour(LineSegmentD* line, const LineSegmentTree& tree);
 
 void computeNewEvent(LineSegmentD* a, LineSegmentD* b, PointD point, StatusQueue& statusQueue);
 
-std::pair<std::vector<LineSegmentD*>, std::vector<LineSegmentD*>> getSets(const PointD& point, LineSegmentTree& tree);
+std::pair<std::vector<LineSegmentD*>, std::vector<LineSegmentD*>> getIntersectionSets(const PointD& point, LineSegmentTree& tree);
 
-EventQueue bentleyOttmann(const std::vector<LineSegmentD>& segments);
+EventQueue bentleyOttmann(std::vector<LineSegmentD>& segments);
