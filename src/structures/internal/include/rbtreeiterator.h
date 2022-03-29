@@ -8,6 +8,11 @@ public:
     typedef T&                          ReferenceType;
     typedef T*                          PointerType;
 
+    typedef ValueType                   value_type;
+    typedef ReferenceType               reference_type;
+    typedef PointerType                 pointer_type;
+    typedef ptrdiff_t                   difference_type;
+
     typedef RBTreeIterator<T>           Self;
     typedef RBTreeNodeBase::BasePointer BasePointer;
     typedef RBTreeNode<T>*              LinkType;
