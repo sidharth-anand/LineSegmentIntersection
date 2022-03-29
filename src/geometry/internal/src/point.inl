@@ -1,30 +1,35 @@
 template <typename T>
 Point<T>::Point()
-    : mX(0), mY(0)
+    : mX(0)
+    , mY(0)
 {
 }
 
 template <typename T>
 Point<T>::Point(T x, T y)
-    : mX(x), mY(y)
+    : mX(x)
+    , mY(y)
 {
 }
 
 template <typename T>
 Point<T>::Point(const Point &other)
-    : mX(other.mX), mY(other.mY)
+    : mX(other.mX)
+    , mY(other.mY)
 {
 }
 
 template <typename T>
 Point<T>::Point(Point &&other)
-    : mX(std::move(other.mX)), mY(std::move(other.mY))
+    : mX(std::move(other.mX))
+    , mY(std::move(other.mY))
 {
 }
 
 template <typename T>
 Point<T>::Point(std::pair<T, T> point)
-    : mX(point.first), mY(point.second)
+    : mX(point.first)
+    , mY(point.second)
 {
 }
 
@@ -47,7 +52,7 @@ const T &Point<T>::getY() const
 }
 
 template <typename T>
-const T &Point<T>::setY(const T &y)
+void Point<T>::setY(const T &y)
 {
     mY = y;
 }
@@ -142,7 +147,7 @@ bool operator!=(const Point<T> &lhs, const Point<T> &rhs)
 template <typename T>
 bool operator<(const Point<T> &lhs, const Point<T> &rhs)
 {
-    return lhs.getY() < rhs.getY() || (lhs.getY() == rhs.getY() && lhs.getX() < rhs.getX());
+    return lhs.getX() < rhs.getX() || (lhs.getX() == rhs.getX() && lhs.getY() < rhs.getY());
 }
 
 template <typename T>

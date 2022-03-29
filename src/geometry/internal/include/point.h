@@ -17,7 +17,7 @@ public:
     void                    setX(const T &x);
 
     const T&                getY() const;
-    const T&                setY(const T &y);
+    void                    setY(const T &y);
 
     std::pair<T, T>         getCoordinates() const;
     void                    setCoordinates(const T &x, const T &y);

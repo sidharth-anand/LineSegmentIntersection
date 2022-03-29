@@ -34,8 +34,8 @@ public:
 
     typedef RBTreeIterator<ValueType>       Iterator;
     typedef RBTreeConstIterator<ValueType>  ConstIterator;
-    typedef RBTreeIterator<ValueType>       ReverseIterator; //TODO: Fix reverse iterator types
-    typedef RBTreeConstIterator<ValueType>  ConstReverseIterator;
+    typedef std::reverse_iterator<Iterator> ReverseIterator;
+    typedef std::reverse_iterator<ConstIterator>  ConstReverseIterator;
 
 public:
                                             RBTree(); 

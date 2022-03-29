@@ -24,6 +24,7 @@ public:
     void                            setEnd(const Point<T>& end);
 
     std::pair<Point<T>, Point<T>>   getPoints() const;
+    const Slope&                    getSlope() const;
 
     LineSegment<T>&                 operator =(const LineSegment<T>& other);
     LineSegment<T>&                 operator =(LineSegment<T>&& other);
@@ -40,6 +41,7 @@ public:
     bool                            contains(const Point<T>& point) const;
 
 private:
+    void                            orderPoints();
     void                            calculateSlope();
 
 private:

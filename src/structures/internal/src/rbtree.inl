@@ -1193,12 +1193,12 @@ typename RBTree<K, M, C, V, A, S>::BasePointer RBTree<K, M, C, V, A, S>::rebalan
         node = result->right;
     else
     {
-        if (node->right == nullptr)
+        if (result->right == nullptr)
             node = result->left;
         else
         {
             result = result->right;
-            while (node->left != nullptr)
+            while (result->left != nullptr)
                 result = result->left;
             node = result->right;
         }
@@ -1238,6 +1238,7 @@ typename RBTree<K, M, C, V, A, S>::BasePointer RBTree<K, M, C, V, A, S>::rebalan
     else
     {
         nodeParent = result->parent;
+        
         if(node)
             node->parent = result->parent;
         
@@ -1283,7 +1284,7 @@ typename RBTree<K, M, C, V, A, S>::BasePointer RBTree<K, M, C, V, A, S>::rebalan
                     right = nodeParent->right;
                 }
 
-                if((right->left == nullptr || right->left->color == RBTreeColor::Black) && (right->right == nullptr || right->right->color == RBTreeColor::Black))
+                if(right && (right->left == nullptr || right->left->color == RBTreeColor::Black) && (right->right == nullptr || right->right->color == RBTreeColor::Black))
                 {
                     right->color = RBTreeColor::Red;
                     node = nodeParent;
