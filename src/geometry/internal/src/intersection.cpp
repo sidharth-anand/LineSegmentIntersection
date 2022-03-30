@@ -3,10 +3,12 @@
 
 #include <internal/include/intersection.h>
 
+
 void findNeighbours(const PointR& point, const LineSegmentTree& tree, LineSegmentR*& above, LineSegmentR*& below)
 {
     PointR sweepPoint = point;
     LineSegmentR sweepLine = LineSegment(sweepPoint, sweepPoint);
+
 
     auto it = tree.upperBound(&sweepLine);
 
@@ -21,9 +23,11 @@ void findNeighbours(const PointR& point, const LineSegmentTree& tree, LineSegmen
         below = (*--it).first;
 }
 
+
 LineSegmentR* findLeftmost(std::vector<LineSegmentR*>& segments, const PointR& point)
 {
     LineSegmentR* min = *segments.begin();
+
 
     for(auto segment : segments)
     {
@@ -34,9 +38,11 @@ LineSegmentR* findLeftmost(std::vector<LineSegmentR*>& segments, const PointR& p
     return min;
 }
 
+
 LineSegmentR* findRightmost(std::vector<LineSegmentR*>& segments, const PointR& point)
 {
     LineSegmentR* max = *segments.begin();
+
 
     for(auto segment : segments)
     {
@@ -47,7 +53,10 @@ LineSegmentR* findRightmost(std::vector<LineSegmentR*>& segments, const PointR& 
     return max;
 }
 
+
 LineSegmentR* findLeftNeighbour(LineSegmentR* line, const LineSegmentTree& tree)
+
+
 {
     auto it = tree.find(line);
 
@@ -57,7 +66,9 @@ LineSegmentR* findLeftNeighbour(LineSegmentR* line, const LineSegmentTree& tree)
         return (*--it).first;
 }
 
+
 LineSegmentR* findRightNeighbour(LineSegmentR* line, const LineSegmentTree& tree)
+
 {
     auto it = tree.find(line);
     
@@ -67,10 +78,13 @@ LineSegmentR* findRightNeighbour(LineSegmentR* line, const LineSegmentTree& tree
         return (*it).first;
 }
 
+
 void computeNewEvent(LineSegmentR* a, LineSegmentR* b, PointR point, StatusQueue& statusQueue)
+
 {
     if (a == nullptr || b == nullptr)
         return;
+
 
     std::optional<PointR> intersection = a->intersects(*b);
 
@@ -83,10 +97,13 @@ std::pair<std::vector<LineSegmentR*>, std::vector<LineSegmentR*>> getIntersectio
     std::vector<LineSegmentR*> i;
     std::vector<LineSegmentR*> r;
 
+
     if(tree.empty())
         return {i, r};
 
+
     LineSegmentR segment(point, point);
+
  
     for (auto it = std::reverse_iterator(tree.upperBound(&segment)); it != tree.rend() && (*it).first->high(point) == point.getY(); it++)
     {
@@ -99,13 +116,16 @@ std::pair<std::vector<LineSegmentR*>, std::vector<LineSegmentR*>> getIntersectio
     return {i, r};
 }
 
+
 EventQueue bentleyOttmann(std::vector<LineSegmentR>& set)
+
 {
     EventQueue eventQueue;
     StatusQueue statusQueue;
 
     for (auto it = set.begin(); it != set.end(); it++)
     {
+
         auto exists = statusQueue.insert({ it->getStart(), std::vector<LineSegmentR*>({ &(*it) }) });
         if (exists.second == false)
             exists.first->second.push_back(&(*it));
@@ -116,6 +136,8 @@ EventQueue bentleyOttmann(std::vector<LineSegmentR>& set)
     PointR sweepPoint;
 
     const auto comparator = [&sweepPoint](LineSegmentR* a, LineSegmentR* b) -> bool 
+
+
     {
         return a->less(*b, sweepPoint);
     };
@@ -124,17 +146,21 @@ EventQueue bentleyOttmann(std::vector<LineSegmentR>& set)
 
     while(statusQueue.size() > 0)
     {
+
         PointR point = statusQueue.begin()->first;
         std::vector<LineSegmentR*> leftSet = statusQueue.begin()->second;
+
         statusQueue.erase(statusQueue.begin());
 
         sweepPoint = point;
+
 
         std::pair<std::vector<LineSegmentR*>, std::vector<LineSegmentR*>> intersectionSets = getIntersectionSets(point, tree);
 
         if(leftSet.size() + intersectionSets.first.size() + intersectionSets.second.size() > 1)
         {
             EventQueue::Iterator it = eventQueue.insert({point, std::vector<LineSegmentR*>()}).first;
+
             
             for(const auto& segment: leftSet)
                 it->second.push_back(segment);
@@ -162,14 +188,17 @@ EventQueue bentleyOttmann(std::vector<LineSegmentR>& set)
 
         if(leftSet.size() + intersectionSets.first.size() == 0)
         {
+
             LineSegmentR* a;
             LineSegmentR* b;
+
 
             findNeighbours(point, tree, a, b);
             computeNewEvent(a, b, point, statusQueue);
         }
         else
         {
+
             std::vector<LineSegmentR*> segments(leftSet.size() + intersectionSets.first.size());
             std::set_union(leftSet.begin(), leftSet.end(), intersectionSets.first.begin(), intersectionSets.first.end(), segments.begin());
 
@@ -177,6 +206,7 @@ EventQueue bentleyOttmann(std::vector<LineSegmentR>& set)
             LineSegmentR* right = findRightmost(segments, point);
             LineSegmentR* leftNeighbour = findLeftNeighbour(left, tree);
             LineSegmentR* rightNeighbour = findRightNeighbour(right, tree);
+
 
             computeNewEvent(left, leftNeighbour, point, statusQueue);
             computeNewEvent(right, rightNeighbour, point, statusQueue);

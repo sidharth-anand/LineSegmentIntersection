@@ -3,7 +3,9 @@
 #include <memory>
 #include <string>
 
+
 #include <math/rational.h>
+
 
 struct Slope
 {
@@ -21,6 +23,8 @@ public:
     bool        operator <(const Slope& other) const;
 
 public:
+
     Rational      value;
+
     Type        type;
 };

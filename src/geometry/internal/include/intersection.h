@@ -11,6 +11,7 @@
 //TODO: Use smart pointers instead of LineSegmentD*
 //TODO: Clean up to use return values instead of modyfing reference params
 
+
 using EventQueue = RBTree<PointR, std::vector<LineSegmentR*>>;
 using StatusQueue = RBTree<PointR, std::vector<LineSegmentR*>>;
 
@@ -30,3 +31,4 @@ void computeNewEvent(LineSegmentR* a, LineSegmentR* b, PointR point, StatusQueue
 std::pair<std::vector<LineSegmentR*>, std::vector<LineSegmentR*>> getIntersectionSets(const PointR& point, LineSegmentTree& tree);
 
 EventQueue bentleyOttmann(std::vector<LineSegmentR>& segments);
+

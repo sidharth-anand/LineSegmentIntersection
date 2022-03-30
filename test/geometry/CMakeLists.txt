@@ -9,4 +9,6 @@ list (APPEND MODULE_SRC "intersection.test.cpp")
 
 list (APPEND MODULE_DEPENDS geometry)
 
+list (APPEND MODULE_DEPENDS geometry)
+
 include (testmodule)
