@@ -16,7 +16,7 @@
 <meta name="twitter:title" content="Doxygen Awesome" />
 <meta name="twitter:description" content="Custom CSS theme for doxygen html-documentation with lots of customization parameters." />
 <!-- END twitter metadata -->
-<title>Bentley-Ottman: Line Segment Intersection</title>
+<title>Bentley-Ottman: Line Segment Intersection via Bentley-Ottmann Algorithm</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/>
 <script type="text/javascript" src="jquery.js"></script>
@@ -117,10 +117,11 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Line Segment Intersection </div>  </div>
+<div class="title">Line Segment Intersection via Bentley-Ottmann Algorithm </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><p><b>Course:</b> CS F364 - Design and Analysis of Algorithm</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Group Members</h1>
 <ul>
 <li>Sidharth Anand (2019A7PS1203H)</li>
@@ -129,9 +130,52 @@ Group Members</h1>
 <li>Aryan Arora (2019A7PS1204H)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Implementation of Algorithm</h1>
+<p>Details regarding the nuances of the algorithm, functions utilized and general workflow can be viewed via Doxygen documentation.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Building and Running</h1>
-<p>Compile and run the project using CMake </p>
-</div></div><!-- PageDoc -->
+<p>Working and running of the project can be performed by CMake.</p>
+<p>Following are the commands and their respective functionalities:-</p>
+<p>Build the project with </p><div class="fragment"><div class="line">cmake -P build.cmake -DCMAKE_BUILD_TYPE=Release</div>
+</div><!-- fragment --><p>Use <code>-DCMAKE_BUILD_UNIT_TESTS</code> and <code>-DCMAKE_BUILD_DOCUMENTATION</code> to turn building building unit tests and documentation on/off</p>
+<p>The built doxygen documentation can be found in the docs directory and is also hosted <a href="https://sidharth-anand.github.io/LineSegmentIntersection/">here</a>.</p>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Testing</h1>
+<p>Shown below are some of the test cases our algorithm was run against, with varying number and types of line segments - each returning unique set of intersections. Attached below are some of the results:-</p>
+<ul>
+<li>Grid 1</li>
+<li>Grid 2</li>
+<li>Ampersand Sign</li>
+<li>Scribble Plot</li>
+<li>Spiral Plot</li>
+<li>Monkey Face Plot</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Grid 1</h2>
+<p><img src="../img/test_isect_crosshatch_01.svg"></p>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Grid 2</h2>
+<p><img src="../img/test_isect_crosshatch_03.svg"></p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Ampersand Sign</h2>
+<p><img src="../img/test_isect_scatter_01.svg"></p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Scribble Plot</h2>
+<p><img src="../img/test_isect_scribble_01.svg"></p>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Spiral Plot</h2>
+<p><img src="../img/test_isect_spiro_01.svg"></p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Monkey Face Plot</h2>
+<p><img src="../img/test_isect_suzzane.svg"></p>
+<h1><a class="anchor" id="autotoc_md11"></a>
+Performance Analysis</h1>
+<p>To verify how effective our algorithm is computationally, we compare the performance of our algorithm with the (n+k)logn plot, to show the similarity of both.</p>
+<p><img src="../img/graph.png"></p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Results</h2>
+<p>We observe that our algorithm severely overperforms the brute force, and is similar to the (n+k)logn plot. Thus, emperically establishing the complexity of our algorithm: </p><pre class="fragment">    T(n, k) ε O((k+n)logn)
+</pre> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

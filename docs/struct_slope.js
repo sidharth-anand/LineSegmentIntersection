@@ -8,5 +8,5 @@ var struct_slope =
     [ "Slope", "struct_slope.html#af33a010c6d2d86edc9d19cae8e53fbf5", null ],
     [ "operator<", "struct_slope.html#a8efb43fd9747b7a089b747959a6651a3", null ],
     [ "type", "struct_slope.html#acb68d3f8445587446b4c41993d73a851", null ],
-    [ "value", "struct_slope.html#a41df7819e204baa76afd86ec08880b8d", null ]
+    [ "value", "struct_slope.html#abd5350b28789055c7086d103b223f7db", null ]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['line_20segment_20intersection_38',['Line Segment Intersection',['../index.html',1,'']]],
+  ['line_20segment_20intersection_20via_20bentley_2dottmann_20algorithm_38',['Line Segment Intersection via Bentley-Ottmann Algorithm',['../index.html',1,'']]],
   ['left_39',['left',['../class_r_b_tree.html#a05ceddd372aa3d37bb7a54735fb8b85b',1,'RBTree::left(BasePointer node)'],['../class_r_b_tree.html#a6c55ff47f9bdbb54171b4983a589003e',1,'RBTree::left(ConstBasePointer node)']]],
   ['leftmost_40',['leftmost',['../class_r_b_tree.html#a2f32670380c69844d0ab2d26e8052779',1,'RBTree::leftmost()'],['../class_r_b_tree.html#abf7df5edbfc115c8f8cb4976001761f8',1,'RBTree::leftmost() const']]],
   ['less_41',['less',['../class_line_segment.html#a82ec3230c2af6fa55a7ad9650bfb9d01',1,'LineSegment']]],

@@ -23,9 +23,21 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "Bentley-Ottman", "index.html", [
-    [ "Line Segment Intersection", "index.html", [
+    [ "Line Segment Intersection via Bentley-Ottmann Algorithm", "index.html", [
       [ "Group Members", "index.html#autotoc_md1", null ],
-      [ "Building and Running", "index.html#autotoc_md2", null ]
+      [ "Implementation of Algorithm", "index.html#autotoc_md2", null ],
+      [ "Building and Running", "index.html#autotoc_md3", null ],
+      [ "Testing", "index.html#autotoc_md4", [
+        [ "Grid 1", "index.html#autotoc_md5", null ],
+        [ "Grid 2", "index.html#autotoc_md6", null ],
+        [ "Ampersand Sign", "index.html#autotoc_md7", null ],
+        [ "Scribble Plot", "index.html#autotoc_md8", null ],
+        [ "Spiral Plot", "index.html#autotoc_md9", null ],
+        [ "Monkey Face Plot", "index.html#autotoc_md10", null ]
+      ] ],
+      [ "Performance Analysis", "index.html#autotoc_md11", [
+        [ "Results", "index.html#autotoc_md12", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -46,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"struct_r_b_tree_iterator.html#a67288e5d287902fb30a03fcb82849541"
+"struct_r_b_tree_iterator.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
