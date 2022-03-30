@@ -7,6 +7,7 @@ set (LINK_LIBS "")
 
 list (APPEND LINK_LIBS structures)
 list (APPEND LINK_LIBS geometry)
+list (APPEND LINK_LIBS math)
 
 add_executable(${EXECUTABLE_NAME} main.cpp)
 set_target_properties(${EXECUTABLE_NAME} PROPERTIES OUTPUT_NAME ${INTERSECTION_OUTPUT_NAME})

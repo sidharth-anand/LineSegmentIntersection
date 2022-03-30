@@ -3,6 +3,10 @@
 #include <iostream>
 #include <memory>
 
+
+#include <math/rational.h>
+
+
 /**
  * @brief A standard container for a point made up of an X and Y coordinate.
  *
@@ -10,10 +14,13 @@
  *
  * @tparam T A generic paramter used to represent the data type used to represent the coordinates.
  */
+
 template <typename T> // TODO: Add arithemtic concept for T
 class Point
 {
 public:
+
+
 
     /**
      * @brief Construct a new POint object with null X and Y coordinates.
@@ -84,6 +91,7 @@ public:
      * @return Pair of coordinates (X, Y) used to construct the point
      */
     std::pair<T, T>         getCoordinates() const;
+    void                    setCoordinates(const T &x, const T &y);
 
     /**
      * @brief Set the X and Y coordinates to new values
@@ -188,4 +196,6 @@ private:
 
 using PointI = Point<int>;
 using PointF = Point<float>;
+
 using PointD = Point<double>;
+using PointR = Point<Rational>;

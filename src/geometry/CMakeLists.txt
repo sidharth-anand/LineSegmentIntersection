@@ -22,6 +22,10 @@ set (MODULE_LINK structures)
 set (MODULE_INCLUDE 
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${PROJECT_SOURCE_DIR}/src/structures
+
+    ${PROJECT_SOURCE_DIR}/src/math
+
+
 )
 
 include (module)

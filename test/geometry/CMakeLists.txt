@@ -5,6 +5,9 @@ set (MODULE_DEPENDS "")
 
 list (APPEND MODULE_SRC "linesegment.test.cpp")
 list (APPEND MODULE_SRC "point.test.cpp")
+list (APPEND MODULE_SRC "intersection.test.cpp")
+
+list (APPEND MODULE_DEPENDS geometry)
 
 list (APPEND MODULE_DEPENDS geometry)
 

@@ -6,6 +6,10 @@
 #include <internal/include/point.h>
 #include <internal/include/slope.h>
 
+
+#include <math/rational.h>
+
+
 /**
  * @brief A standard container for a line segment made up of two points, a start and an end.
  *
@@ -82,6 +86,7 @@ public:
      */
     const Point<T>&                 getEnd() const;
 
+
     /**
      * @brief Set the end point of the LineSegment to a different value.
      *
@@ -123,6 +128,7 @@ public:
      * @param other The pair of points (start, end) to assign to create a new LineSegment with the same start and end points.
      */
     LineSegment<T>&                 operator =( std::pair<Point<T>, Point<T> > other );
+
 
     /**
      * @brief Computes the high of a line segment.
@@ -187,7 +193,22 @@ public:
      */
     bool                            contains( const Point<T>& point ) const;
 
+    T                               high(const Point<T>& point) const;
+    bool                            less(const LineSegment<T>& other, const Point<T>& point) const;
+
+    std::optional<Point<T>>         intersects(const LineSegment<T>& other) const;
+
+    bool                            isRightEnd(const Point<T>& point) const;
+    bool                            isLeftEnd(const Point<T>& point) const;
+
+    bool                            contains(const Point<T>& point) const;
+
 private:
+    void                            orderPoints();
+    void                            calculateSlope();
+
+private:
+
     void                            orderPoints();
 
     /**
@@ -222,3 +243,5 @@ private:
 using LineSegmentI = LineSegment<int>;
 using LineSegmentF = LineSegment<float>;
 using LineSegmentD = LineSegment<double>;
+using LineSegmentR = LineSegment<Rational>;
+

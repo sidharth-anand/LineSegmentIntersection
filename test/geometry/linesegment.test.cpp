@@ -56,7 +56,7 @@ TEST(LineSegment, SetStart)
 {
     LineSegmentI ls(PointI(1, 2), PointI(3, 4));
     ls.setStart(PointI(5, 6));
-    EXPECT_EQ(ls.getStart(), PointI(5, 6));
+    EXPECT_EQ(ls.getStart(), PointI(3, 4));
 }
 
 TEST(LineSegment, SetEnd)

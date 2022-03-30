@@ -11,22 +11,24 @@
 //TODO: Use smart pointers instead of LineSegmentD*
 //TODO: Clean up to use return values instead of modyfing reference params
 
-using EventQueue = RBTree<PointD, std::vector<LineSegmentD*>>;
-using StatusQueue = RBTree<PointD, std::vector<LineSegmentD*>>;
 
-using LineSegmentComparator = std::function<bool(LineSegmentD*, LineSegmentD*)>;
-using LineSegmentTree = RBTree<LineSegmentD*, PointD, LineSegmentComparator>;
+using EventQueue = RBTree<PointR, std::vector<LineSegmentR*>>;
+using StatusQueue = RBTree<PointR, std::vector<LineSegmentR*>>;
 
-void findNeighbours(const PointD& point, const LineSegmentTree& tree, LineSegmentD*& above, LineSegmentD*& below);
+using LineSegmentComparator = std::function<bool(LineSegmentR*, LineSegmentR*)>;
+using LineSegmentTree = RBTree<LineSegmentR*, PointR, LineSegmentComparator>;
 
-LineSegmentD* findLeftmost(std::vector<LineSegmentD*>& segments, const PointD& point);
-LineSegmentD* findRightmost(std::vector<LineSegmentD*>& segments, const PointD& point);
+void findNeighbours(const PointR& point, const LineSegmentTree& tree, LineSegmentR*& above, LineSegmentR*& below);
 
-LineSegmentD* findLeftNeighbour(LineSegmentD* line, const LineSegmentTree& tree);
-LineSegmentD* findRightNeighbour(LineSegmentD* line, const LineSegmentTree& tree);
+LineSegmentR* findLeftmost(std::vector<LineSegmentR*>& segments, const PointR& point);
+LineSegmentR* findRightmost(std::vector<LineSegmentR*>& segments, const PointR& point);
 
-void computeNewEvent(LineSegmentD* a, LineSegmentD* b, PointD point, StatusQueue& statusQueue);
+LineSegmentR* findLeftNeighbour(LineSegmentR* line, const LineSegmentTree& tree);
+LineSegmentR* findRightNeighbour(LineSegmentR* line, const LineSegmentTree& tree);
 
-std::pair<std::vector<LineSegmentD*>, std::vector<LineSegmentD*>> getIntersectionSets(const PointD& point, LineSegmentTree& tree);
+void computeNewEvent(LineSegmentR* a, LineSegmentR* b, PointR point, StatusQueue& statusQueue);
 
-EventQueue bentleyOttmann(std::vector<LineSegmentD>& segments);
+std::pair<std::vector<LineSegmentR*>, std::vector<LineSegmentR*>> getIntersectionSets(const PointR& point, LineSegmentTree& tree);
+
+EventQueue bentleyOttmann(std::vector<LineSegmentR>& segments);
+

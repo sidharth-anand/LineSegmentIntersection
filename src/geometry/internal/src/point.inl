@@ -64,7 +64,7 @@ std::pair<T, T> Point<T>::getCoordinates() const
     return std::make_pair(mX, mY);
 }
 
-//setCoordinates function
+
 template <typename T>
 void Point<T>::setCoordinates(const T &x, const T &y)
 {
@@ -169,8 +169,11 @@ bool operator>=(const Point<T> &lhs, const Point<T> &rhs)
 }
 
 template <typename T>
-std::ostream& operator <<(std::ostream& stream, const Point<T>& point)
+
+std::ostream &operator<<(std::ostream &stream, const Point<T> &point)
 {
-    stream << "(" << point.getX() << ", " << point.getY() << ")";
+    // stream << "(" << point.getX() << ", " << point.getY() << ")";
+
+
     return stream;
 }
