@@ -137,6 +137,18 @@ typedef T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ReferenceT
 <tr class="memitem:a63685a6b2d6995e822ad70030b1a9768"><td class="memItemLeft" align="right" valign="top"><a id="a63685a6b2d6995e822ad70030b1a9768"></a>
 typedef T *&#160;</td><td class="memItemRight" valign="bottom"><b>PointerType</b></td></tr>
 <tr class="separator:a63685a6b2d6995e822ad70030b1a9768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd5f4650fe3d9a0736f9aa30e169f59"><td class="memItemLeft" align="right" valign="top"><a id="a3dd5f4650fe3d9a0736f9aa30e169f59"></a>
+typedef ValueType&#160;</td><td class="memItemRight" valign="bottom"><b>value_type</b></td></tr>
+<tr class="separator:a3dd5f4650fe3d9a0736f9aa30e169f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fae31e6f4e7ca05784d27b889aff47"><td class="memItemLeft" align="right" valign="top"><a id="a93fae31e6f4e7ca05784d27b889aff47"></a>
+typedef ReferenceType&#160;</td><td class="memItemRight" valign="bottom"><b>reference_type</b></td></tr>
+<tr class="separator:a93fae31e6f4e7ca05784d27b889aff47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263b8ea5992c7cc0def03133a58d66d0"><td class="memItemLeft" align="right" valign="top"><a id="a263b8ea5992c7cc0def03133a58d66d0"></a>
+typedef PointerType&#160;</td><td class="memItemRight" valign="bottom"><b>pointer_type</b></td></tr>
+<tr class="separator:a263b8ea5992c7cc0def03133a58d66d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95860db3c1974a6453eb8ad11c1a882"><td class="memItemLeft" align="right" valign="top"><a id="ac95860db3c1974a6453eb8ad11c1a882"></a>
+typedef ptrdiff_t&#160;</td><td class="memItemRight" valign="bottom"><b>difference_type</b></td></tr>
+<tr class="separator:ac95860db3c1974a6453eb8ad11c1a882"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86f9791bcbbb012af8414904f9a39818"><td class="memItemLeft" align="right" valign="top"><a id="a86f9791bcbbb012af8414904f9a39818"></a>
 typedef <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Self</b></td></tr>
 <tr class="separator:a86f9791bcbbb012af8414904f9a39818"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,40 +161,276 @@ typedef <a class="el" href="struct_r_b_tree_node.html">RBTreeNode</a>&lt; T &gt;
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a92599e89d0a274ecae8244ccef85398d"><td class="memItemLeft" align="right" valign="top"><a id="a92599e89d0a274ecae8244ccef85398d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>RBTreeIterator</b> (<a class="el" href="struct_r_b_tree_node.html">LinkType</a> link)</td></tr>
+<tr class="memitem:a01c2cbbb8c7df86d8cc8afeda5133ae2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#a01c2cbbb8c7df86d8cc8afeda5133ae2">RBTreeIterator</a> ()</td></tr>
+<tr class="memdesc:a01c2cbbb8c7df86d8cc8afeda5133ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a> object.  <a href="struct_r_b_tree_iterator.html#a01c2cbbb8c7df86d8cc8afeda5133ae2">More...</a><br /></td></tr>
+<tr class="separator:a01c2cbbb8c7df86d8cc8afeda5133ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92599e89d0a274ecae8244ccef85398d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#a92599e89d0a274ecae8244ccef85398d">RBTreeIterator</a> (<a class="el" href="struct_r_b_tree_node.html">LinkType</a> link)</td></tr>
+<tr class="memdesc:a92599e89d0a274ecae8244ccef85398d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a> object using a link.  <a href="struct_r_b_tree_iterator.html#a92599e89d0a274ecae8244ccef85398d">More...</a><br /></td></tr>
 <tr class="separator:a92599e89d0a274ecae8244ccef85398d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc877695bab18d78819c09ede3223983"><td class="memItemLeft" align="right" valign="top"><a id="abc877695bab18d78819c09ede3223983"></a>
-ReferenceType&#160;</td><td class="memItemRight" valign="bottom"><b>operator*</b> () const</td></tr>
+<tr class="memitem:abc877695bab18d78819c09ede3223983"><td class="memItemLeft" align="right" valign="top">ReferenceType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#abc877695bab18d78819c09ede3223983">operator*</a> () const</td></tr>
+<tr class="memdesc:abc877695bab18d78819c09ede3223983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereference operator.  <a href="struct_r_b_tree_iterator.html#abc877695bab18d78819c09ede3223983">More...</a><br /></td></tr>
 <tr class="separator:abc877695bab18d78819c09ede3223983"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b8181a52173892bb0bd2c92831d3dc"><td class="memItemLeft" align="right" valign="top"><a id="a23b8181a52173892bb0bd2c92831d3dc"></a>
-PointerType&#160;</td><td class="memItemRight" valign="bottom"><b>operator-&gt;</b> () const</td></tr>
+<tr class="memitem:a23b8181a52173892bb0bd2c92831d3dc"><td class="memItemLeft" align="right" valign="top">PointerType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#a23b8181a52173892bb0bd2c92831d3dc">operator-&gt;</a> () const</td></tr>
+<tr class="memdesc:a23b8181a52173892bb0bd2c92831d3dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereference operator.  <a href="struct_r_b_tree_iterator.html#a23b8181a52173892bb0bd2c92831d3dc">More...</a><br /></td></tr>
 <tr class="separator:a23b8181a52173892bb0bd2c92831d3dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2149adef6864393b1e533bd7b627d54"><td class="memItemLeft" align="right" valign="top"><a id="ad2149adef6864393b1e533bd7b627d54"></a>
-<a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> ()</td></tr>
+<tr class="memitem:ad2149adef6864393b1e533bd7b627d54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#ad2149adef6864393b1e533bd7b627d54">operator++</a> ()</td></tr>
+<tr class="memdesc:ad2149adef6864393b1e533bd7b627d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix increment operator.  <a href="struct_r_b_tree_iterator.html#ad2149adef6864393b1e533bd7b627d54">More...</a><br /></td></tr>
 <tr class="separator:ad2149adef6864393b1e533bd7b627d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae336d9d7b73f6abf750b44f149de0c8a"><td class="memItemLeft" align="right" valign="top"><a id="ae336d9d7b73f6abf750b44f149de0c8a"></a>
-<a class="el" href="struct_r_b_tree_iterator.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator++</b> (int)</td></tr>
+<tr class="memitem:ae336d9d7b73f6abf750b44f149de0c8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#ae336d9d7b73f6abf750b44f149de0c8a">operator++</a> (int)</td></tr>
+<tr class="memdesc:ae336d9d7b73f6abf750b44f149de0c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Postfix increment operator.  <a href="struct_r_b_tree_iterator.html#ae336d9d7b73f6abf750b44f149de0c8a">More...</a><br /></td></tr>
 <tr class="separator:ae336d9d7b73f6abf750b44f149de0c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba1b45e0c19e6b4160ae01cf7a7101cb"><td class="memItemLeft" align="right" valign="top"><a id="aba1b45e0c19e6b4160ae01cf7a7101cb"></a>
-<a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> ()</td></tr>
+<tr class="memitem:aba1b45e0c19e6b4160ae01cf7a7101cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#aba1b45e0c19e6b4160ae01cf7a7101cb">operator--</a> ()</td></tr>
+<tr class="memdesc:aba1b45e0c19e6b4160ae01cf7a7101cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prefix decrement operator.  <a href="struct_r_b_tree_iterator.html#aba1b45e0c19e6b4160ae01cf7a7101cb">More...</a><br /></td></tr>
 <tr class="separator:aba1b45e0c19e6b4160ae01cf7a7101cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f1882d2fc618949167e408678d8c69b"><td class="memItemLeft" align="right" valign="top"><a id="a9f1882d2fc618949167e408678d8c69b"></a>
-<a class="el" href="struct_r_b_tree_iterator.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator--</b> (int)</td></tr>
+<tr class="memitem:a9f1882d2fc618949167e408678d8c69b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_r_b_tree_iterator.html">Self</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#a9f1882d2fc618949167e408678d8c69b">operator--</a> (int)</td></tr>
+<tr class="memdesc:a9f1882d2fc618949167e408678d8c69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Postfix decrement operator.  <a href="struct_r_b_tree_iterator.html#a9f1882d2fc618949167e408678d8c69b">More...</a><br /></td></tr>
 <tr class="separator:a9f1882d2fc618949167e408678d8c69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace409c66648ca4e3de9f3c8a5cb20e33"><td class="memItemLeft" align="right" valign="top"><a id="ace409c66648ca4e3de9f3c8a5cb20e33"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;other) const</td></tr>
+<tr class="memitem:ace409c66648ca4e3de9f3c8a5cb20e33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#ace409c66648ca4e3de9f3c8a5cb20e33">operator==</a> (const <a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;other) const</td></tr>
+<tr class="memdesc:ace409c66648ca4e3de9f3c8a5cb20e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <a href="struct_r_b_tree_iterator.html#ace409c66648ca4e3de9f3c8a5cb20e33">More...</a><br /></td></tr>
 <tr class="separator:ace409c66648ca4e3de9f3c8a5cb20e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a151a6fd602c1ee5efdf22b4fa5d89ddf"><td class="memItemLeft" align="right" valign="top"><a id="a151a6fd602c1ee5efdf22b4fa5d89ddf"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;other) const</td></tr>
+<tr class="memitem:a151a6fd602c1ee5efdf22b4fa5d89ddf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#a151a6fd602c1ee5efdf22b4fa5d89ddf">operator!=</a> (const <a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;other) const</td></tr>
+<tr class="memdesc:a151a6fd602c1ee5efdf22b4fa5d89ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inequality operator.  <a href="struct_r_b_tree_iterator.html#a151a6fd602c1ee5efdf22b4fa5d89ddf">More...</a><br /></td></tr>
 <tr class="separator:a151a6fd602c1ee5efdf22b4fa5d89ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a61c2b1d1ecf3a86cb7afb67467371a1c"><td class="memItemLeft" align="right" valign="top"><a id="a61c2b1d1ecf3a86cb7afb67467371a1c"></a>
-<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>node</b></td></tr>
+<a class="el" href="struct_r_b_tree_node_base.html">BasePointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_b_tree_iterator.html#a61c2b1d1ecf3a86cb7afb67467371a1c">node</a></td></tr>
+<tr class="memdesc:a61c2b1d1ecf3a86cb7afb67467371a1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the base pointer of the node. <br /></td></tr>
 <tr class="separator:a61c2b1d1ecf3a86cb7afb67467371a1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a01c2cbbb8c7df86d8cc8afeda5133ae2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01c2cbbb8c7df86d8cc8afeda5133ae2">&#9670;&nbsp;</a></span>RBTreeIterator() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::<a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a> object. </p>
+
+</div>
+</div>
+<a id="a92599e89d0a274ecae8244ccef85398d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92599e89d0a274ecae8244ccef85398d">&#9670;&nbsp;</a></span>RBTreeIterator() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::<a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_r_b_tree_node.html">LinkType</a>&#160;</td>
+          <td class="paramname"><em>link</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a> object using a link. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">link</td><td>Link to use when constructing the iterator </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a151a6fd602c1ee5efdf22b4fa5d89ddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151a6fd602c1ee5efdf22b4fa5d89ddf">&#9670;&nbsp;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inequality operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Other iterator to compare to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The iterators are not equal </dd>
+<dd>
+false The iterators are equal </dd></dl>
+
+</div>
+</div>
+<a id="abc877695bab18d78819c09ede3223983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc877695bab18d78819c09ede3223983">&#9670;&nbsp;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::ReferenceType <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator*</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dereference operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>ReferenceType Reference to the value of the node </dd></dl>
+
+</div>
+</div>
+<a id="ad2149adef6864393b1e533bd7b627d54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2149adef6864393b1e533bd7b627d54">&#9670;&nbsp;</a></span>operator++() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt; &amp; <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator++</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prefix increment operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Self Reference to the iterator after incrementing </dd></dl>
+
+</div>
+</div>
+<a id="ae336d9d7b73f6abf750b44f149de0c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae336d9d7b73f6abf750b44f149de0c8a">&#9670;&nbsp;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt; <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Postfix increment operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Self Reference to the iterator before incrementing </dd></dl>
+
+</div>
+</div>
+<a id="aba1b45e0c19e6b4160ae01cf7a7101cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba1b45e0c19e6b4160ae01cf7a7101cb">&#9670;&nbsp;</a></span>operator--() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt; &amp; <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator--</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prefix decrement operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Self Reference to the iterator after decrementing </dd></dl>
+
+</div>
+</div>
+<a id="a9f1882d2fc618949167e408678d8c69b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1882d2fc618949167e408678d8c69b">&#9670;&nbsp;</a></span>operator--() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt; <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Postfix decrement operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>Self Reference to the iterator before decrementing </dd></dl>
+
+</div>
+</div>
+<a id="a23b8181a52173892bb0bd2c92831d3dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b8181a52173892bb0bd2c92831d3dc">&#9670;&nbsp;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::PointerType <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator-&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dereference operator. </p>
+<dl class="section return"><dt>Returns</dt><dd>PointerType Pointer to the value of the node </dd></dl>
+
+</div>
+</div>
+<a id="ace409c66648ca4e3de9f3c8a5cb20e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace409c66648ca4e3de9f3c8a5cb20e33">&#9670;&nbsp;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="struct_r_b_tree_iterator.html">RBTreeIterator</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_r_b_tree_iterator.html">Self</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Equality operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Other iterator to compare to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true The iterators are equal </dd>
+<dd>
+false The iterators are not equal </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>src/structures/internal/include/<a class="el" href="rbtreeiterator_8h_source.html">rbtreeiterator.h</a></li>
 <li>src/structures/internal/src/rbtreeiterator.inl</li>

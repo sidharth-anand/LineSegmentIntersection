@@ -124,49 +124,65 @@ $(document).ready(function(){initNavTree('rbtreeconstiterator_8h_source.html',''
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;internal/include/rbtreeiterator.h&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="struct_r_b_tree_const_iterator.html">    6</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">typedef</span> T                                   ValueType;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> T&amp;                            ReferenceType;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> T*                            PointerType;</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator&lt;T&gt;</a>              <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">typedef</span> RBTreeNodeBase::ConstBasePointer    BasePointer;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_node.html">RBTreeNode&lt;T&gt;</a>*                LinkType;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="struct_r_b_tree_iterator.html">RBTreeIterator&lt;T&gt;</a>                   <a class="code" href="struct_r_b_tree_iterator.html">IteratorType</a>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                                                <a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a>();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">explicit</span>                                    <a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a>(LinkType link);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                                <a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a>(<span class="keyword">const</span> <a class="code" href="struct_r_b_tree_iterator.html">IteratorType</a>&amp; other);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="struct_r_b_tree_const_iterator.html">   11</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">typedef</span> T                                  ValueType;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> T&amp;                           ReferenceType;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> T                            * PointerType;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator&lt;T&gt;</a>             <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">typedef</span> RBTreeNodeBase::ConstBasePointer   BasePointer;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_node.html">RBTreeNode&lt;T&gt;</a>                * LinkType;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="struct_r_b_tree_iterator.html">RBTreeIterator&lt;T&gt;</a>                  <a class="code" href="struct_r_b_tree_iterator.html">IteratorType</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="struct_r_b_tree_iterator.html">IteratorType</a>                                constCast() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ReferenceType                               operator *() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    PointerType                                 operator -&gt;() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp;                                       operator ++();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>                                        operator ++(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp;                                       operator --();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>                                        operator --(<span class="keywordtype">int</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span>                                        operator ==(<span class="keyword">const</span> <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp; other) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span>                                        operator !=(<span class="keyword">const</span> <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp; other) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html#a5d8814b407758616271c4d00bd367b81">RBTreeConstIterator</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="struct_r_b_tree_const_iterator.html#a5d8814b407758616271c4d00bd367b81">RBTreeConstIterator</a>( LinkType link );</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    BasePointer                                 node;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;internal/src/rbtreeconstiterator.inl&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html#a5d8814b407758616271c4d00bd367b81">RBTreeConstIterator</a>( <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_iterator.html">IteratorType</a>&amp; other );</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="struct_r_b_tree_iterator.html">IteratorType</a>                                <a class="code" href="struct_r_b_tree_const_iterator.html#ac40a8bbaa62a7ee5db1ae2eadb6e2328">constCast</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ReferenceType <a class="code" href="struct_r_b_tree_const_iterator.html#a3c1b097a8c5e534172cc6d1998de0db8">operator *</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    PointerType <a class="code" href="struct_r_b_tree_const_iterator.html#a0fd5bc65295e5e4086ce39280aa24af6">operator -&gt;</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp;                                       <a class="code" href="struct_r_b_tree_const_iterator.html#acedbf1c59cc8c37c2ad36f732de21ae1">operator ++</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a> <a class="code" href="struct_r_b_tree_const_iterator.html#acedbf1c59cc8c37c2ad36f732de21ae1">operator ++</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp;                                       <a class="code" href="struct_r_b_tree_const_iterator.html#a5be5609aa1854c733e415525b02a5480">operator --</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a> <a class="code" href="struct_r_b_tree_const_iterator.html#a5be5609aa1854c733e415525b02a5480">operator --</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_r_b_tree_const_iterator.html#a45bd33ec5890bc77ea984d0801dbc49a">operator ==</a>( <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp; other ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="struct_r_b_tree_const_iterator.html#aa06f91c2eefeb2d1c0c18fa77a9630f1">operator !=</a>( <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_const_iterator.html">Self</a>&amp; other ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="struct_r_b_tree_const_iterator.html#a6f8104aec0703625c5d373ceb8b0e712">  118</a></span>&#160;    BasePointer <a class="code" href="struct_r_b_tree_const_iterator.html#a6f8104aec0703625c5d373ceb8b0e712">node</a>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#include &lt;internal/src/rbtreeconstiterator.inl&gt;</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astruct_r_b_tree_const_iterator_html"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a></div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.h:6</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html">RBTreeConstIterator</a></div><div class="ttdoc">Structure to define a constant iterator for the red-black tree.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.h:11</div></div>
 <div class="ttc" id="astruct_r_b_tree_iterator_html"><div class="ttname"><a href="struct_r_b_tree_iterator.html">RBTreeIterator</a></div><div class="ttdef"><b>Definition:</b> rbtreeiterator.h:4</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_a3c1b097a8c5e534172cc6d1998de0db8"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#a3c1b097a8c5e534172cc6d1998de0db8">RBTreeConstIterator::operator*</a></div><div class="ttdeci">ReferenceType operator*() const</div><div class="ttdoc">Dereference operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:30</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_a0fd5bc65295e5e4086ce39280aa24af6"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#a0fd5bc65295e5e4086ce39280aa24af6">RBTreeConstIterator::operator-&gt;</a></div><div class="ttdeci">PointerType operator-&gt;() const</div><div class="ttdoc">Dereference operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:36</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_acedbf1c59cc8c37c2ad36f732de21ae1"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#acedbf1c59cc8c37c2ad36f732de21ae1">RBTreeConstIterator::operator++</a></div><div class="ttdeci">Self &amp; operator++()</div><div class="ttdoc">Prefix increment operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:42</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_a6f8104aec0703625c5d373ceb8b0e712"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#a6f8104aec0703625c5d373ceb8b0e712">RBTreeConstIterator::node</a></div><div class="ttdeci">BasePointer node</div><div class="ttdoc">Base pointer to the node.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.h:118</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_a5d8814b407758616271c4d00bd367b81"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#a5d8814b407758616271c4d00bd367b81">RBTreeConstIterator::RBTreeConstIterator</a></div><div class="ttdeci">RBTreeConstIterator()</div><div class="ttdoc">Construct a blank RBTreeConstIterator object.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:6</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_aa06f91c2eefeb2d1c0c18fa77a9630f1"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#aa06f91c2eefeb2d1c0c18fa77a9630f1">RBTreeConstIterator::operator!=</a></div><div class="ttdeci">bool operator!=(const Self &amp;other) const</div><div class="ttdoc">Inequality operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:78</div></div>
 <div class="ttc" id="astruct_r_b_tree_node_html"><div class="ttname"><a href="struct_r_b_tree_node.html">RBTreeNode&lt; T &gt;</a></div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_ac40a8bbaa62a7ee5db1ae2eadb6e2328"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#ac40a8bbaa62a7ee5db1ae2eadb6e2328">RBTreeConstIterator::constCast</a></div><div class="ttdeci">IteratorType constCast() const</div><div class="ttdoc">Constant cast operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:24</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_a5be5609aa1854c733e415525b02a5480"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#a5be5609aa1854c733e415525b02a5480">RBTreeConstIterator::operator--</a></div><div class="ttdeci">Self &amp; operator--()</div><div class="ttdoc">Prefix decrement operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:57</div></div>
+<div class="ttc" id="astruct_r_b_tree_const_iterator_html_a45bd33ec5890bc77ea984d0801dbc49a"><div class="ttname"><a href="struct_r_b_tree_const_iterator.html#a45bd33ec5890bc77ea984d0801dbc49a">RBTreeConstIterator::operator==</a></div><div class="ttdeci">bool operator==(const Self &amp;other) const</div><div class="ttdoc">Equality operator.</div><div class="ttdef"><b>Definition:</b> rbtreeconstiterator.inl:72</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

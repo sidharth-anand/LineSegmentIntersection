@@ -17,6 +17,7 @@ var class_point =
     [ "operator=", "class_point.html#ac25058f3755671485b204fa287839c1a", null ],
     [ "operator=", "class_point.html#ad54520ffeac1426d11997eb042732503", null ],
     [ "operator==", "class_point.html#adf32f0433bac4b135b5daab51392eb01", null ],
+    [ "setCoordinates", "class_point.html#a1822d6e4d3b09a709de091fbbb670be5", null ],
     [ "setX", "class_point.html#a2b343b36513c5fd7458a5e7b6c6ec6de", null ],
-    [ "setY", "class_point.html#ae31c46930a018a7e5bd95e42a7bf3308", null ]
+    [ "setY", "class_point.html#a2555513662bdca4615b3ded09997f5a9", null ]
 ];

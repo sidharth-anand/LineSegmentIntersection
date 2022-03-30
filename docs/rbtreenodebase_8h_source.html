@@ -127,31 +127,39 @@ $(document).ready(function(){initNavTree('rbtreenodebase_8h_source.html',''); in
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="struct_r_b_tree_node_base.html">    5</a></span>&#160;<span class="keyword">struct </span><a class="code" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a>*         <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a>*   ConstBasePointer;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a>         * <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">typedef</span> <span class="keyword">const</span> <a class="code" href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a>   * ConstBasePointer;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          minimum(<a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> ConstBasePointer     minimum(ConstBasePointer node);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          maximum(<a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">static</span> ConstBasePointer     maximum(ConstBasePointer node);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          increment(<a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">static</span> ConstBasePointer     increment(ConstBasePointer node);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          decrement(<a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">static</span> ConstBasePointer     decrement(ConstBasePointer node);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    RBTreeColor color;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> parent;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> left;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> right;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          <a class="code" href="struct_r_b_tree_node_base.html#a28252d56785d473812b4ecc1f1d3fe72">minimum</a>( <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> ConstBasePointer     <a class="code" href="struct_r_b_tree_node_base.html#a28252d56785d473812b4ecc1f1d3fe72">minimum</a>( ConstBasePointer node );</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          <a class="code" href="struct_r_b_tree_node_base.html#a2ba887aff9e1093af71c5b9f2514e05a">maximum</a>( <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node );</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> ConstBasePointer     <a class="code" href="struct_r_b_tree_node_base.html#a2ba887aff9e1093af71c5b9f2514e05a">maximum</a>( ConstBasePointer node );</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          <a class="code" href="struct_r_b_tree_node_base.html#ac1d48138fd47214f6a9dc71826f847a6">increment</a>( <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node );</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">static</span> ConstBasePointer     <a class="code" href="struct_r_b_tree_node_base.html#ac1d48138fd47214f6a9dc71826f847a6">increment</a>( ConstBasePointer node );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a>          <a class="code" href="struct_r_b_tree_node_base.html#a50b9198cb7f5b13fbe4e35360c938761">decrement</a>( <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> node );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> ConstBasePointer     <a class="code" href="struct_r_b_tree_node_base.html#a50b9198cb7f5b13fbe4e35360c938761">decrement</a>( ConstBasePointer node );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    RBTreeColor color;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> parent;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> left;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="struct_r_b_tree_node_base.html">BasePointer</a> right;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astruct_r_b_tree_node_base_html_a50b9198cb7f5b13fbe4e35360c938761"><div class="ttname"><a href="struct_r_b_tree_node_base.html#a50b9198cb7f5b13fbe4e35360c938761">RBTreeNodeBase::decrement</a></div><div class="ttdeci">static BasePointer decrement(BasePointer node)</div><div class="ttdoc">Decrement the node's value by 1.</div></div>
+<div class="ttc" id="astruct_r_b_tree_node_base_html_a28252d56785d473812b4ecc1f1d3fe72"><div class="ttname"><a href="struct_r_b_tree_node_base.html#a28252d56785d473812b4ecc1f1d3fe72">RBTreeNodeBase::minimum</a></div><div class="ttdeci">static BasePointer minimum(BasePointer node)</div><div class="ttdoc">Get the pointer to the node containing the least value in the subtree.</div><div class="ttdef"><b>Definition:</b> rbtreenodebase.cpp:3</div></div>
 <div class="ttc" id="astruct_r_b_tree_node_base_html"><div class="ttname"><a href="struct_r_b_tree_node_base.html">RBTreeNodeBase</a></div><div class="ttdef"><b>Definition:</b> rbtreenodebase.h:5</div></div>
+<div class="ttc" id="astruct_r_b_tree_node_base_html_a2ba887aff9e1093af71c5b9f2514e05a"><div class="ttname"><a href="struct_r_b_tree_node_base.html#a2ba887aff9e1093af71c5b9f2514e05a">RBTreeNodeBase::maximum</a></div><div class="ttdeci">static BasePointer maximum(BasePointer node)</div><div class="ttdoc">Get the pointer to the node containing the greatest value in the subtree.</div><div class="ttdef"><b>Definition:</b> rbtreenodebase.cpp:17</div></div>
+<div class="ttc" id="astruct_r_b_tree_node_base_html_ac1d48138fd47214f6a9dc71826f847a6"><div class="ttname"><a href="struct_r_b_tree_node_base.html#ac1d48138fd47214f6a9dc71826f847a6">RBTreeNodeBase::increment</a></div><div class="ttdeci">static BasePointer increment(BasePointer node)</div><div class="ttdoc">Increment the node's value by 1.</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
