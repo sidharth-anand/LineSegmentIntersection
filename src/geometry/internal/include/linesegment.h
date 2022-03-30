@@ -6,6 +6,8 @@
 #include <internal/include/point.h>
 #include <internal/include/slope.h>
 
+#include <math/rational.h>
+
 template <typename T>
 class LineSegment
 {
@@ -55,3 +57,4 @@ private:
 using LineSegmentI = LineSegment<int>;
 using LineSegmentF = LineSegment<float>;
 using LineSegmentD = LineSegment<double>;
+using LineSegmentR = LineSegment<Rational>;

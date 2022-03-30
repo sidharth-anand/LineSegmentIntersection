@@ -3,6 +3,8 @@
 #include <iostream>
 #include <memory>
 
+#include <math/rational.h>
+
 template <typename T> // TODO: Add arithemtic concept for T
 class Point
 {
@@ -45,3 +47,4 @@ private:
 using PointI = Point<int>;
 using PointF = Point<float>;
 using PointD = Point<double>;
+using PointR = Point<Rational>;

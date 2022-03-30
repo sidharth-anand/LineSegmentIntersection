@@ -1,7 +1,6 @@
 template <typename T>
 LineSegment<T>::LineSegment()
-    : mStart()
-    , mEnd()
+    : mStart(), mEnd()
 {
     orderPoints();
     calculateSlope();
@@ -9,8 +8,7 @@ LineSegment<T>::LineSegment()
 
 template <typename T>
 LineSegment<T>::LineSegment(const Point<T> &start, const Point<T> &end)
-    : mStart(start)
-    , mEnd(end)
+    : mStart(start), mEnd(end)
 {
     orderPoints();
     calculateSlope();
@@ -18,8 +16,7 @@ LineSegment<T>::LineSegment(const Point<T> &start, const Point<T> &end)
 
 template <typename T>
 LineSegment<T>::LineSegment(Point<T> &&start, Point<T> &&end)
-    : mStart(std::move(start))
-    , mEnd(std::move(end))
+    : mStart(std::move(start)), mEnd(std::move(end))
 {
     orderPoints();
     calculateSlope();
@@ -27,8 +24,7 @@ LineSegment<T>::LineSegment(Point<T> &&start, Point<T> &&end)
 
 template <typename T>
 LineSegment<T>::LineSegment(const LineSegment<T> &other)
-    : mStart(other.mStart)
-    , mEnd(other.mEnd)
+    : mStart(other.mStart), mEnd(other.mEnd)
 {
     orderPoints();
     calculateSlope();
@@ -36,8 +32,7 @@ LineSegment<T>::LineSegment(const LineSegment<T> &other)
 
 template <typename T>
 LineSegment<T>::LineSegment(LineSegment<T> &&other)
-    : mStart(std::move(other.mStart))
-    , mEnd(std::move(other.mEnd))
+    : mStart(std::move(other.mStart)), mEnd(std::move(other.mEnd))
 {
     orderPoints();
     calculateSlope();
@@ -46,7 +41,7 @@ LineSegment<T>::LineSegment(LineSegment<T> &&other)
 template <typename T>
 LineSegment<T>::LineSegment(std::pair<Point<T>, Point<T>> points)
     : mStart(points.first),
-    mEnd(points.second)
+      mEnd(points.second)
 {
     orderPoints();
     calculateSlope();
@@ -88,14 +83,14 @@ std::pair<Point<T>, Point<T>> LineSegment<T>::getPoints() const
     return std::make_pair(mStart, mEnd);
 }
 
-template<typename T>
-const Slope& LineSegment<T>::getSlope() const
+template <typename T>
+const Slope &LineSegment<T>::getSlope() const
 {
     return mSlope;
 }
 
 template <typename T>
-T LineSegment<T>::high(const Point<T>& point) const
+T LineSegment<T>::high(const Point<T> &point) const
 {
     if (mSlope.type == Slope::Type::Infinite)
     {
@@ -108,21 +103,21 @@ T LineSegment<T>::high(const Point<T>& point) const
             return ly;
         else if (py > ry)
             return ry;
-        else 
+        else
             return py;
     }
-    
+
     return mSlope.value * (point.getX() - mStart.getX()) + mStart.getY();
 }
 
-template<typename T>
-bool LineSegment<T>::less(const LineSegment<T>& other, const Point<T>& point) const
+template <typename T>
+bool LineSegment<T>::less(const LineSegment<T> &other, const Point<T> &point) const
 {
     return high(point) < other.high(point) || (high(point) == other.high(point) && mSlope < other.getSlope());
 }
 
 template <typename T>
-std::optional<Point<T>> LineSegment<T>::intersects(const LineSegment<T>& other) const
+std::optional<Point<T>> LineSegment<T>::intersects(const LineSegment<T> &other) const
 {
     T xa = getStart().getX();
     T ya = getStart().getY();
@@ -154,19 +149,19 @@ std::optional<Point<T>> LineSegment<T>::intersects(const LineSegment<T>& other) 
 }
 
 template <typename T>
-bool LineSegment<T>::isRightEnd(const Point<T>& point) const
+bool LineSegment<T>::isRightEnd(const Point<T> &point) const
 {
     return point == mEnd;
 }
 
 template <typename T>
-bool LineSegment<T>::isLeftEnd(const Point<T>& point) const
+bool LineSegment<T>::isLeftEnd(const Point<T> &point) const
 {
     return point == mStart;
 }
 
-template<typename T>
-bool LineSegment<T>::contains(const Point<T>& point) const
+template <typename T>
+bool LineSegment<T>::contains(const Point<T> &point) const
 {
     return !isRightEnd(point) && !isLeftEnd(point);
 }
@@ -178,7 +173,7 @@ void LineSegment<T>::orderPoints()
         std::swap(mStart, mEnd);
 }
 
-template<typename T>
+template <typename T>
 void LineSegment<T>::calculateSlope()
 {
     if (mStart.getX() == mEnd.getX())
@@ -239,7 +234,7 @@ bool operator!=(const LineSegment<T> &lhs, const LineSegment<T> &rhs)
 }
 
 template <typename T>
-std::ostream& operator <<(std::ostream& stream, const LineSegment<T> segment)
+std::ostream &operator<<(std::ostream &stream, const LineSegment<T> segment)
 {
     stream << segment.getStart() << " -> " << segment.getEnd();
     return stream;

@@ -6,6 +6,7 @@ include (platform)
 set (TEST_MODULE_LIST 
     structures
     geometry
+    math
 )
 
 set (TEST_SOURCE "")

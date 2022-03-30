@@ -1,35 +1,30 @@
 template <typename T>
 Point<T>::Point()
-    : mX(0)
-    , mY(0)
+    : mX(0), mY(0)
 {
 }
 
 template <typename T>
 Point<T>::Point(T x, T y)
-    : mX(x)
-    , mY(y)
+    : mX(x), mY(y)
 {
 }
 
 template <typename T>
 Point<T>::Point(const Point &other)
-    : mX(other.mX)
-    , mY(other.mY)
+    : mX(other.mX), mY(other.mY)
 {
 }
 
 template <typename T>
 Point<T>::Point(Point &&other)
-    : mX(std::move(other.mX))
-    , mY(std::move(other.mY))
+    : mX(std::move(other.mX)), mY(std::move(other.mY))
 {
 }
 
 template <typename T>
 Point<T>::Point(std::pair<T, T> point)
-    : mX(point.first)
-    , mY(point.second)
+    : mX(point.first), mY(point.second)
 {
 }
 
@@ -57,14 +52,13 @@ void Point<T>::setY(const T &y)
     mY = y;
 }
 
-
 template <typename T>
 std::pair<T, T> Point<T>::getCoordinates() const
 {
     return std::make_pair(mX, mY);
 }
 
-//setCoordinates function
+// setCoordinates function
 template <typename T>
 void Point<T>::setCoordinates(const T &x, const T &y)
 {
@@ -169,8 +163,8 @@ bool operator>=(const Point<T> &lhs, const Point<T> &rhs)
 }
 
 template <typename T>
-std::ostream& operator <<(std::ostream& stream, const Point<T>& point)
+std::ostream &operator<<(std::ostream &stream, const Point<T> &point)
 {
-    stream << "(" << point.getX() << ", " << point.getY() << ")";
+    // stream << "(" << point.getX() << ", " << point.getY() << ")";
     return stream;
 }
