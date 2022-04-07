@@ -126,33 +126,37 @@ bool LineSegment<T>::less(const LineSegment<T>& other, const Point<T>& point) co
 template <typename T>
 std::optional<Point<T>> LineSegment<T>::intersects(const LineSegment<T>& other) const
 {
-    T xa = getStart().getX();
-    T ya = getStart().getY();
+    // return std::nullopt if the lines are parallel
+    // return std::nullopt if the lines are the same
+    // return Point<T> if the lines intersect
+    // use the cramer's rule to solve for the intersection
 
-    T xb = getEnd().getX();
-    T yb = getEnd().getY();
-
-    T xc = other.getStart().getX();
-    T yc = other.getStart().getY();
-
-    T xd = other.getEnd().getX();
-    T yd = other.getEnd().getY();
-
-    T delta = (xb - xa) * (yc - yd) - (yb - ya) * (xc - xd);
-
-    if (delta == 0)
+    if (mSlope.value == other.getSlope().value)
         return {};
-
-    T r = ((xc - xa) * (yc - yd) - (yc - ya) * (xc - xd)) / delta;
-    T s = ((yc - ya) * (xb - xa) - (xc - xa) * (yb - ya)) / delta;
-
-    if (r < 0 || r > 1 || s < 0 || s > 1)
-        return {};
-
-    T x = xa + r * (xb - xa);
-    T y = ya + r * (yb - ya);
-
-    return Point<T>(x, y);
+    
+    if (mSlope.type == Slope::Type::Infinite)
+    {
+        if (other.getSlope().type == Slope::Type::Infinite)
+            return {};
+        else
+        {
+            T x = mStart.getX();
+            T y = other.getSlope().value * (x - other.getStart().getX()) + other.getStart().getY();
+            return Point<T>(x, y);
+        }
+    }
+    else if (other.getSlope().type == Slope::Type::Infinite)
+    {
+        T x = other.getStart().getX();
+        T y = mSlope.value * (x - mStart.getX()) + mStart.getY();
+        return Point<T>(x, y);
+    }
+    else
+    {
+        T x = (other.getStart().getY() - mStart.getY() + mSlope.value * mStart.getX() - other.getSlope().value * other.getStart().getX()) / (mSlope.value - other.getSlope().value);
+        T y = mSlope.value * (x - mStart.getX()) + mStart.getY();
+        return Point<T>(x, y);
+    }
 }
 
 template <typename T>
