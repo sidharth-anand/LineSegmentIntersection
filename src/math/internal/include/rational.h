@@ -7,7 +7,7 @@ class Rational
 {
 public:
     constexpr Rational();
-    explicit constexpr Rational(const int &n);
+    constexpr Rational(const int &n);
     constexpr Rational(const int &n, const int &d);
 
     constexpr Rational &operator=(const int &n);

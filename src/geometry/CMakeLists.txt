@@ -17,15 +17,15 @@ list (APPEND MODULE_SRC "internal/src/intersection.cpp")
 set (MODULE_SET_LANGUAGE ON)
 set (MODULE_LANGUAGE "CXX")
 
-set (MODULE_LINK structures)
+set (MODULE_LINK 
+    structures
+    math
+)
 
 set (MODULE_INCLUDE 
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${PROJECT_SOURCE_DIR}/src/structures
-
     ${PROJECT_SOURCE_DIR}/src/math
-
-
+    ${PROJECT_SOURCE_DIR}/src/structures
 )
 
 include (module)

@@ -45,8 +45,6 @@ constexpr Rational Rational::operator-() const
     return Rational(-mNumerator, mDenominator);
 }
 
-// rational-rational operations
-
 constexpr Rational operator+(const Rational &q, const Rational &r)
 {
     return Rational(q.getNumerator() * r.getDenominator() + r.getNumerator() * q.getDenominator(), q.getDenominator() * r.getDenominator());
@@ -336,4 +334,10 @@ constexpr void Rational::normalize()
         mNumerator = -mNumerator;
         mDenominator = -mDenominator;
     }
+}
+
+inline std::ostream& operator <<(std::ostream& stream, const Rational & rational)
+{
+    stream << rational.getNumerator() << "/" << rational.getDenominator();
+    return stream;
 }

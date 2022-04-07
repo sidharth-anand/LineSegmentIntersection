@@ -169,11 +169,8 @@ bool operator>=(const Point<T> &lhs, const Point<T> &rhs)
 }
 
 template <typename T>
-
-std::ostream &operator<<(std::ostream &stream, const Point<T> &point)
+std::ostream &operator<<(std::ostream& stream, const Point<T>& point)
 {
-    // stream << "(" << point.getX() << ", " << point.getY() << ")";
-
-
+    stream << "(" << point.getX() << ", " << point.getY() << ")";
     return stream;
 }

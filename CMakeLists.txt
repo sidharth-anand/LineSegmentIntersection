@@ -7,13 +7,13 @@ set (CMAKE_CXX_STANDARD_REQUIRED True)
 
 set (CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/build ${CMAKE_MODULE_PATH})
 
-option (BUILD_UNIT_TESTS "Build the unit tests project" OFF)
-option (BUILD_DOCUMENTATION "Build the Doxygen Documentation" ON)
+option (BUILD_UNIT_TESTS "Build the unit tests project" ON)
+option (BUILD_DOCUMENTATION "Build the Doxygen Documentation" OFF)
 
 include (setup)
 
 message (STATUS "Configuring src")
-#add_subdirectory (src)
+add_subdirectory (src)
 
 if (BUILD_UNIT_TESTS)
     enable_testing ()

@@ -91,7 +91,6 @@ public:
      * @return Pair of coordinates (X, Y) used to construct the point
      */
     std::pair<T, T>         getCoordinates() const;
-    void                    setCoordinates(const T &x, const T &y);
 
     /**
      * @brief Set the X and Y coordinates to new values
