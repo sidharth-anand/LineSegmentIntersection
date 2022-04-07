@@ -67,7 +67,7 @@ Shown below are some of the test cases our algorithm was run against, with varyi
 
 To verify how effective our algorithm is computationally, we compare the performance of our algorithm with the brute force approach. We also compare the graph with (n+k)logn plot, to show the similarity of both.
 
-![plot]()
+![plot](/img/graph.png)
 
 ### Results
 

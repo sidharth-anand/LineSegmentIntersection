@@ -174,3 +174,20 @@ std::ostream &operator<<(std::ostream& stream, const Point<T>& point)
     stream << "(" << point.getX() << ", " << point.getY() << ")";
     return stream;
 }
+
+template <typename T>
+std::istream& operator >>(std::istream& stream, Point<T>& point)
+{
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), '(');
+
+    stream >> point.mX;
+
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), ',');
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), ' ');
+
+    stream >> point.mY;
+
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), ')');
+
+    return stream;
+}

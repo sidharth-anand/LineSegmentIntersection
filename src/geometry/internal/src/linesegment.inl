@@ -131,32 +131,33 @@ std::optional<Point<T>> LineSegment<T>::intersects(const LineSegment<T>& other) 
     // return Point<T> if the lines intersect
     // use the cramer's rule to solve for the intersection
 
-    if (mSlope.value == other.getSlope().value)
+    T xa = getStart().getX();
+    T ya = getStart().getY();
+
+    T xb = getEnd().getX();
+    T yb = getEnd().getY();
+
+    T xc = other.getStart().getX();
+    T yc = other.getStart().getY();
+
+    T xd = other.getEnd().getX();
+    T yd = other.getEnd().getY();
+
+    T delta = (xb - xa) * (yc - yd) - (yb - ya) * (xc - xd);
+
+    if (delta == 0)
         return {};
-    
-    if (mSlope.type == Slope::Type::Infinite)
-    {
-        if (other.getSlope().type == Slope::Type::Infinite)
-            return {};
-        else
-        {
-            T x = mStart.getX();
-            T y = other.getSlope().value * (x - other.getStart().getX()) + other.getStart().getY();
-            return Point<T>(x, y);
-        }
-    }
-    else if (other.getSlope().type == Slope::Type::Infinite)
-    {
-        T x = other.getStart().getX();
-        T y = mSlope.value * (x - mStart.getX()) + mStart.getY();
-        return Point<T>(x, y);
-    }
-    else
-    {
-        T x = (other.getStart().getY() - mStart.getY() + mSlope.value * mStart.getX() - other.getSlope().value * other.getStart().getX()) / (mSlope.value - other.getSlope().value);
-        T y = mSlope.value * (x - mStart.getX()) + mStart.getY();
-        return Point<T>(x, y);
-    }
+
+    T r = ((xc - xa) * (yc - yd) - (yc - ya) * (xc - xd)) / delta;
+    T s = ((yc - ya) * (xb - xa) - (xc - xa) * (yb - ya)) / delta;
+
+    if (r <= 0 || r >= 1 || s <= 0 || s >= 1)
+        return {};
+
+    T x = xa + r * (xb - xa);
+    T y = ya + r * (yb - ya);
+
+    return Point<T>(x, y);
 }
 
 template <typename T>
@@ -245,10 +246,25 @@ bool operator!=(const LineSegment<T> &lhs, const LineSegment<T> &rhs)
 }
 
 template <typename T>
-
 std::ostream &operator<<(std::ostream &stream, const LineSegment<T> segment)
-
 {
     stream << segment.getStart() << " -> " << segment.getEnd();
+    return stream;
+}
+
+template <typename T>
+std::istream& operator >>(std::istream& stream, LineSegment<T>& segment)
+{
+    stream >> segment.mStart;
+
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), ' ');
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), '-');
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), '>');
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), ' ');
+
+    stream >> segment.mEnd;
+
+    segment.calculateSlope();
+
     return stream;
 }
