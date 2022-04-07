@@ -341,3 +341,12 @@ inline std::ostream& operator <<(std::ostream& stream, const Rational & rational
     stream << rational.getNumerator() << "/" << rational.getDenominator();
     return stream;
 }
+
+inline std::istream& operator >>(std::istream& stream, Rational& rational)
+{
+    stream >> rational.mNumerator;
+    stream.ignore(std::numeric_limits<std::streamsize>::max(), '/');
+    stream >> rational.mDenominator;
+
+    return stream;
+}

@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <memory>
-
+#include <limits>
 
 #include <math/rational.h>
 
@@ -178,6 +178,9 @@ public:
      * @return Point<T> with the result of division of the two points
      */
     Point<T>                operator/( const T& other ) const;
+
+    template <typename R>
+    friend std::istream&            operator >>(std::istream& stream, Point<R>& point);
 
 private:
     /**

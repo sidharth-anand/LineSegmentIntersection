@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 
 #include <math/rational.h>
@@ -7,27 +8,32 @@
 #include <geometry/linesegment.h>
 #include <geometry/intersection.h>
 
-int main()
+int main(int argc, char* argv[])
 {
+    if (argc != 3)
+    {
+        std::cout << "Usage: " << argv[0] << " <input-file> <output-file>\n";
+        return 1;   
+    }
 
-    std::vector<LineSegmentR> lines = {
-        LineSegmentR({-2, -2}, {2, 2}),
-        LineSegmentR({-1, 1}, {1, -1}),
-        LineSegmentR({-3, 0}, {3, 0}),
-        LineSegmentR({0, 4}, {8, 6}),
-        LineSegmentR({6, 8}, {2, 2})
-    };
+    LineSegmentR line;
+    std::ifstream infile(argv[1]);
+
+    std::vector<LineSegmentR> lines;
+
+    while (infile >> line)
+        lines.push_back(line);
 
     auto events = bentleyOttmann(lines);
-
+    std::ofstream outfile(argv[2]);
 
     for (const auto &event : events)
     {
-        std::cout << event.first << ": ";
+        outfile << event.first << ": ";
         for (const auto &line : event.second)
-            std::cout << *line << ", ";
+            outfile << *line << ", ";
 
-        std::cout << "\n";
+        outfile << "\n";
     }
 
     return 0;

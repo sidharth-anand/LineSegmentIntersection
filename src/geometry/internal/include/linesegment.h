@@ -1,7 +1,9 @@
 #pragma once
 
+#include <iostream>
 #include <memory>
 #include <optional>
+#include <limits>
 
 #include <internal/include/point.h>
 #include <internal/include/slope.h>
@@ -188,6 +190,9 @@ public:
      * @return false If the given point does not lie on this line segment.
      */
     bool                            contains( const Point<T>& point ) const;
+
+    template <typename R>
+    friend std::istream&            operator >>(std::istream& stream, LineSegment<R>& segment);
 
 private:
 

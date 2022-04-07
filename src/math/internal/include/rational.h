@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <limits>
 
 class Rational
 {
@@ -53,6 +54,10 @@ public:
 
     static constexpr int gcd(const int &a, const int &b);
     static constexpr int lcm(const int &a, const int &b);
+
+public:
+    friend std::ostream& operator <<(std::ostream& stream, const Rational& rational);
+    friend std::istream& operator >>(std::istream& stream, Rational& rational);
 
 private:
     static constexpr bool isNormalized(const int &n, const int &d);
