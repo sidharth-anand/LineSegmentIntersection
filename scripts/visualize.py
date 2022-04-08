@@ -3,7 +3,7 @@ import sys
 
 def export_svg(filename, segments, intersections):
     scale = 256.0
-    margin = 1.1
+    margin = 2.1
     with open(filename + ".svg", "w", encoding="utf-8") as f:
         fw = f.write
         fw('<?xml version="1.0" encoding="UTF-8"?>\n')
@@ -28,7 +28,7 @@ def export_svg(filename, segments, intersections):
         )
 
         fw(
-            '<rect x="%d" y="%d" width="%d" height="%d" fill="white"/>\n'
+            '<rect x="%d" y="%d" width="%d" height="%d" fill="black"/>\n'
             % (
                 -int(margin * scale),
                 -int(margin * scale),
@@ -38,7 +38,7 @@ def export_svg(filename, segments, intersections):
         )
 
         if segments:
-            fw('<g stroke="black" stroke-opacity="0.25" stroke-width="3">\n')
+            fw('<g stroke="yellow" stroke-opacity="0.25" stroke-width="1">\n')
             for v0, v1 in segments:
                 fw(
                     '<line x1="%.4f" y1="%.4f" x2="%.4f" y2="%.4f" />\n'
@@ -47,11 +47,11 @@ def export_svg(filename, segments, intersections):
             fw("</g>\n")
         if intersections:
             fw(
-                '<g fill="purple" fill-opacity="1.0" stroke="white" stroke-opacity="1.0" stroke-width="1">\n'
+                '<g fill="yellow" fill-opacity="0.25" stroke="white" stroke-opacity="0.5" stroke-width="1">\n'
             )
             for v0 in intersections:
                 fw(
-                    '<circle cx="%.4f" cy="%.4f" r="6"/>\n'
+                    '<circle cx="%.4f" cy="%.4f" r="2"/>\n'
                     % (v0[0] * scale, -v0[1] * scale)
                 )
             fw("</g>\n")
